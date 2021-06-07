@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # get '/dropoffs', to: 'pages#dropoffs_index', as: :dropoffs
   get '/profile', to: 'pages#profile', as: :profile
 
-  resources :companies, only: [:index, :show] do
-    resources :coupons, only: [:index], shallow: true
-  end
-
+  resources :companies, only: [:index, :show]
+  
+  resources :coupons, only: [:index]
+  
   resources :dropoffs, only: [:index]
 
   resources :items, only: [:index]
