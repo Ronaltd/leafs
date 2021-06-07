@@ -1,0 +1,2 @@
+class Dropoff < ApplicationRecord
+end
