@@ -1,0 +1,8 @@
+<p><%= @leaf.credit %></p>
+
+<ul>
+<% @leaf.items.each do |item| %>
+<li> <%= "#{item.amount} - #{item.item_type}" %> </li>
+
+<% end %>
+</ul>
