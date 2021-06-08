@@ -1,0 +1,9 @@
+<p><% @companies.each do |company| %>
+  <%= link_to company_path(company) do %>
+    <%= company.name %> <br>
+    <%= company.url %> <br>
+    <%= image_tag "#{company.logo}", size: "160x150" %>
+    <% end %>
+  <%end%>
+</p>
+
