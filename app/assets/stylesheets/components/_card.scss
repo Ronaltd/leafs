@@ -1,0 +1,14 @@
+.card-companies{
+  box-shadow: 0 15px 30px -10px rgb(224, 224, 224);
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 16px 22px 30px 22px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+
+.card-companies:hover{
+  box-shadow: 0 20px 40px -10px rgb(238, 238, 238);
+  transform: translatey(-6px);
+}
