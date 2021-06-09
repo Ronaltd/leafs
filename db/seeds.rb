@@ -42,4 +42,46 @@ Dropoff.create(
   opening_hours: '24h'
   )
 
+Dropoff.create(
+  name: 'Dropp off 2',
+  address: 'Avenida Guilherme Dumont Vilares, 1015 Jardim Londrina - Morumbi, São Paulo - SP, 05640-001',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 3',
+  address: 'Avenida Guilherme Dumont Vilares, 1015 Jardim Londrina - Morumbi, São Paulo - SP, 05640-001',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 4',
+  address: 'Av. Dr. Guilherme Dumont Vilares, 1450 - Jardim Londrina, São Paulo - SP, 05640-003',
+  opening_hours: '24h'
+  )
+
+Coupon.create(
+  company_id: 1,
+  discount: 'Cupom Extra de 30% de desconto Dia dos namorados',
+  code: 'DOCE',
+  )
+
+ Coupon.create(
+  company_id: 1,
+  discount: 'Móveis selecionados com 10% de descontos',
+  code: 'EXCLUSIVOMOVEIS',
+  )
+
+Coupon.create(
+  company_id: 4,
+  discount: 'Cupom Dell de R$300 OFF acima de R$6.499 + Frete Grátis',
+  code: 'MELIUZ300',
+  )
+
+  Coupon.create(
+  company_id: 2,
+  discount: 'Cupom Americanas exclusivo concede R$15 OFF',
+  code: 'CUPOMMELIUZ',
+  ) 
+
 puts 'all set'
