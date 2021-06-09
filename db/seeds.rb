@@ -42,4 +42,22 @@ Dropoff.create(
   opening_hours: '24h'
   )
 
+Dropoff.create(
+  name: 'Dropp off 2 - G Barbosa',
+  address: 'R. Luiz Chagas, 55, Aracaju - SE, 49037-430',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 3 - Pão de aúcar',
+  address: 'R. José Seabra Batista,Jardins, Aracaju - SE, 49025-750',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 4 - Extra',
+  address: 'Av. Adélia Franco, 3735 - Grageru, Aracaju - SE, 49025-620',
+  opening_hours: '24h'
+  )
+
 puts 'all set'

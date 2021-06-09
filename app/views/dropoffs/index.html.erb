@@ -1,6 +1,8 @@
-<h1><p><% @dropoffs.each do |dropoff| %>
-    <%= dropoff.name %> <br>
-    <%= dropoff.address %> <br>
-  <%end%>
-</p>
-</h1>
+
+<% @dropoffs.each do |dropoff| %>
+  <h3><%= dropoff.name %></h3>
+  <p><%= dropoff.address %> </p>
+<%end%>
+
+
+
