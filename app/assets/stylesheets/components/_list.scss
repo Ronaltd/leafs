@@ -1,0 +1,20 @@
+.ul-company{
+  position: relative;
+  width: 1000px;
+  margin: 100px auto 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.li-company{
+  box-shadow: 0 15px 30px -10px rgb(224, 224, 224);
+  display: flex;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 50px;
+}
+
+.li-company span{
+font-size: 30px;
+color: rgb(107, 107, 107);
+}
