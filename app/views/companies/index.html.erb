@@ -1,4 +1,13 @@
-<div class='container my-5'>
+<div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
+  <div class="container text-center">
+    <h1>Faça parte dessa mudança</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <%# <a class="button-green" href="#">Apply now</a> %>
+  </div>
+</div>
+
+<div class='container mt-5'>
+  <h1 class='text-center mb-5'>Empresas Parceiras</h1>
   <div class='row'>
     <% @companies.each do |company| %>
       <div class=" col-lg-3  col-md-6 col-sm-6 mb-5">
@@ -6,7 +15,7 @@
           <%= link_to company_path(company) do %>
             <%= image_tag "#{company.logo}", size: "160x160" %>
             <br>
-            <%= link_to 'Coupons', company_path(company), class: 'button-green' %>
+            <%= link_to 'Cupons', company_path(company), class: 'button-green' %>
           <% end %>
         </div>
       </div>
