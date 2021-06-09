@@ -1,7 +1,6 @@
 .ul-company{
   position: relative;
   width: 1000px;
-  margin: 100px auto 0;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -15,6 +14,16 @@
 }
 
 .li-company span{
-font-size: 30px;
+font-size: 20px;
 color: rgb(107, 107, 107);
 }
+
+.li-company span i{
+  font-size: 30px;
+  color: rgb(107, 107, 107);
+  }
+
+  .li-company .cupom{
+    font-size: 20px;
+    color: #F24B4B;
+    }
