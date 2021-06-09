@@ -1,1 +1,12 @@
-<h1><%= @company.name %></h1>
+<div class="container text-center">
+  <div class="card-company mt-5">
+    <%= image_tag "#{@company.logo}", size: "250x250" %>
+    <ul class='ul-company'>
+      <li class='li-company d-flex justify-content-between'>
+        <span class="cupom-sim"><i class="fas fa-ticket-alt"></i></span>
+        <span class="desconto">25% de Desconto em todo o Site!</span>
+        <span class="cupom">X129CD91</span>
+      </li>
+    </ul>
+  </div>
+</div>
