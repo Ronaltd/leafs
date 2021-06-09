@@ -1,13 +1,41 @@
 .button-green {
   color: white;
   padding: 8px 24px;
-  background: #1EDD88;
+  background: #7CBF17;
   border-radius: 50px;
   transition: background 0.3s ease;
 }
 
 .button-green:hover {
-  background: #1BCB7F;
+  background:  #6fac15;
+  color: white;
+  text-decoration: none;
+}
+
+.button-orange {
+  color: white;
+  padding: 8px 24px;
+  background: #F2762E;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.button-orange:hover {
+  background:  #df6c2a;
+  color: white;
+  text-decoration: none;
+}
+
+.button-red {
+  color: white;
+  padding: 8px 24px;
+  background: #F24B4B;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.button-red:hover {
+  background:  #d64242;
   color: white;
   text-decoration: none;
 }
