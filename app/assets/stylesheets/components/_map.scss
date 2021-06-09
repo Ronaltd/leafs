@@ -1,0 +1,44 @@
+.mapboxgl-popup {
+  max-width: 200px;
+
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.geocoder {
+  padding: 10px;
+  width: 50%;
+  top: 10px;
+  margin: 0 610px;
+  border-radius: 100%;
+}
+
+
+#map {
+  left: 30%;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.geo{
+  position:relative;
+  margin: 0;
+}
+
+.map-overlay {
+  position:absolute;
+  width: 30.5%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background-color: #efefef;
+  max-height: 100%;
+  overflow: hidden;
+}
+

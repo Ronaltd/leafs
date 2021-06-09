@@ -1,6 +1,8 @@
 <div class="container">
   <div class="card-company mt-5">
-    <%= image_tag "#{@company.logo}", size: "300x300" %>
+    <%= link_to @company.url, target: "_blank" do %>
+      <%= image_tag "#{@company.logo}", size: "300x300" %>
+    <% end %>
     <div class="d-flex justify-content-center">
       <table class="content-table">
         <thead>
@@ -17,6 +19,7 @@
         <%end%>
       </table>
     </div>
+    <%= link_to "#{@company.name}", @company.url, class: 'button-green', target: "_blank" %>
   </div>
 </div>
 
