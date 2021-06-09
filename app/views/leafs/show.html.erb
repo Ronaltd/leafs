@@ -1,8 +1,24 @@
-<p><%= @leaf.credit %></p>
+<h2>My Leaf</h2>
+
+<p>Valor creditado: <%= @leaf.credit %>leafs</p>
+<p>Status: <%= @leaf.accepted ? "Aprovado" : "Pendente"  %></p>
+<p>Estação de Reciclagem: <%= @leaf.dropoff ? @leaf.dropoff.name : "Pendente" %></p>
+
+<p>A Natureza agradece! Material para reciclagem:</p>
 
 <ul>
 <% @leaf.items.each do |item| %>
-<li> <%= "#{item.amount} - #{item.item_type}" %> </li>
+<li> <%= "#{item.amount}kg - #{item.item_type}" %> </li>
 
 <% end %>
 </ul>
+
+Atualizar local da entrega do material:
+
+<%= simple_form_for (@leaf) do |f| %>
+  <%= f.input :dropoff_id, label: 'Estação de Reciclagem', as: :integer %>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to "Voltar para Meus Leafs", leafs_path %>

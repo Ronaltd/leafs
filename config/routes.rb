@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   resources :dropoffs, only: [:index]
 
-  resources :leafs, only: [:index, :show, :new, :create]
+  resources :leafs, only: [:index, :show, :new, :create, :update]
     
 
 

@@ -1,0 +1,10 @@
+<h2>Meus Leafs</h2>
+
+
+<% @leafs.each do |leaf| %>
+ <div>
+    <%= link_to leaf_path(leaf.id) do %>
+     <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at %></p> 
+    <% end %>
+  </div>
+<%end%>

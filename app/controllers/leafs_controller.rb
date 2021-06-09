@@ -1,12 +1,16 @@
 class LeafsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new] 
 
+  def index
+    @leafs = Leaf.all
+  end
+  
   def show
     @leaf = Leaf.find(params[:id])
   end
   
   def new
-     end   
+  end   
 
   def create
     @leaf = Leaf.new(user: current_user, credit: 0, accepted: false)
@@ -14,10 +18,23 @@ class LeafsController < ApplicationController
     if @leaf.save
       create_items(@leaf, params[:items])
       @leaf.update(credit:calculate_credit(@leaf))
-      redirect_to @leaf, notice: 'leafs were successfully credited.' # ou para profile
+      redirect_to @leaf, notice: 'leafs creditados com sucesso.'
     else
       render :new
     end
+  end
+
+
+  def update
+    @leaf = Leaf.find(params[:id])
+    @dropoff = Dropoff.find(params[:leaf][:dropoff_id].to_i)
+    
+    if @leaf.update(dropoff: @dropoff, accepted: true)
+      redirect_to @leaf, notice: 'leaf atualizado com sucesso.'
+    else
+      render :show, notice: "Atualização não realizada."
+    end
+    
   end
 
   private
