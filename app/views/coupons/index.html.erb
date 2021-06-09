@@ -1,9 +1,16 @@
-<h1>Coupons</h1>
+<h1>Cupons de Desconto</h1>
 
-<p><% @coupons.each do |coupon| %>
-  <%= link_to company_path(company) do %>
-    <%= coupon.discount %> <br>
-    <%= coupon.code %> <br>
+<% @coupons.each do |coupon| %>
+ <div>
+    <%= link_to company_path(coupon.company_id) do %>
+      <%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "50x50"%>
+      <%=  @companies.find(coupon.company_id).name %>
+      <%= coupon.discount %>
+      <%= coupon.code %> <br>
     <% end %>
-  <%end%>
-</p>
+  </div>
+<%end%>
+
+<div>
+</div>
+
