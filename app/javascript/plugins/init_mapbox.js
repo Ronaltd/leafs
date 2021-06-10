@@ -1,9 +1,7 @@
 import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css'; // this line is not on the lecture video
+import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-// import MapboxDirections from "@mapbox/mapbox-gl-directions";
-// import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
@@ -11,7 +9,7 @@ import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 2000 });
+  map.fitBounds(bounds, { padding: 70, maxZoom: 10, duration: 1000 });
 };
 
 const addMarkersToMap = (map, markers) => {
@@ -43,6 +41,8 @@ const initMapbox = () => {
     });
 
 
+// --------------Map box directions ---------//
+
     // map.addControl(new MapboxDirections({accessToken: mapboxgl.accessToken}), 'top-left');
 
     const directions = new MapboxDirections({
@@ -51,6 +51,8 @@ const initMapbox = () => {
     });
 
     map.addControl(directions, 'top-left');
+
+
 // ------------ Search Bar -------------//
 
     // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
@@ -64,11 +66,13 @@ const initMapbox = () => {
 
     document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+
 // ---- navigation control under search bar -----//
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav);
 
-// ------------- User location ------------//
+
+// ------------- User location ---------------//
 
     // Initialize the geolocate control.
     const geolocate = new mapboxgl.GeolocateControl({
@@ -82,17 +86,10 @@ const initMapbox = () => {
     map.on('load', function() {
       geolocate.trigger();
     });
-// -----------------------------------------//
 
-    // const geocoder = new MapboxGeocoder({
-    // accessToken: mapboxgl.accessToken,
-    // mapboxgl: mapboxgl
-    // });
-
-    // document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
-// ----------------------------------------//
+// --------------------------------------------//
     const markers = JSON.parse(mapElement.dataset.markers);
+
 
     // markers.forEach((marker) => {
     //   new mapboxgl.Marker()
@@ -102,8 +99,10 @@ const initMapbox = () => {
     addMarkersToMap(map, markers)
     fitMapToMarkers(map, markers);
   }
+  // ----------- Overlay ------------//
+
+
 };
 
 export { initMapbox };
-
 
