@@ -1,0 +1,45 @@
+.content-table{
+  border-collapse: collapse;
+  margin: 40px 0;
+  font-size: 23px;
+  min-width: 980px;
+  color: rgb(80, 80, 80);
+  text-align: left;
+}
+
+
+.content-table td{
+   padding: 25px 15px;
+  }
+  
+  .content-table tr {
+    color: rgb(90, 90, 90);
+    border-radius: 50px;
+  }
+  
+  .content-table td i{
+    margin-right: 12px;
+    font-size: 25px;
+  }
+  
+  .content-table tbody tr{
+    border-bottom: 1px solid rgb(214, 214, 214);
+  }
+  
+  .content-table tr{
+    transition: 0.5s;
+  i {
+    transition: 0.5s;
+  }
+}
+
+.content-table tr:hover{
+  color: rgb(27, 27, 27);
+  background: rgb(243, 243, 243);
+  i {
+    transform: rotate(90deg);
+  }
+}
+
+
+
