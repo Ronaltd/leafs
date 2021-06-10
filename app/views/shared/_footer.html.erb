@@ -1,21 +1,36 @@
 <div class='footer'>
+  <!-- BLOCO 1 COM DUAS COLUNAS -->
   <div class='row'>
+    <!-- COLUNA 1-->
     <div class='column-1'>
       <h4>Perguntas Frequentes</h4>
-      <ul>
-        <p><li> <%= link_to 'Quem Somos?', root_path %></li></p>
-        <p><li> <%= link_to 'Perguntas Frequentes?', root_path %></li></p>
-        <p><li> <%= link_to 'Atendimento', root_path %></li></p>
-      </ul>
+      <div class='questions'>
+        <p class='title'><i class="fas fa-angle-right"></i> Como o Leafs funciona?</p>
+        <p class='title'><i class="fas fa-angle-right"></i> <%= link_to 'Companies', companies_path %> </p>
+        <p class='title'><i class="fas fa-angle-right"></i> <%= link_to 'Drop Off Places', root_path %> </p>
+        <p class='title'><i class="fas fa-angle-right"></i> <%= link_to 'Coupons', root_path %> </p>
+      </div>
     </div>
+    <!-- COLUNA 2-->
     <div class='column-2'>
       <h4>Siga a Leafs nas redes sociais</h4>
+      <div class='icons'>
         <a class='fontawesome' href="#"><i class="fab fa-facebook-square"></i></a>
         <a class='fontawesome' href="#"><i class="fab fa-instagram-square"></i></a>
         <a class='fontawesome' href="#"><i class="fab fa-twitter-square"></i></a>
         <a class='fontawesome' href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
   </div>
-  <div class='row'>
+</div>
+<!--BLOCO 2 COM O FOOTER-->
+<div class='row'>
+  <div class='copyright'>
+    <span>
+      "Todos os direitos reservados - 2021 - Leafs - Keep <strong>Green</strong>! Make it Good! "
+      <a class='termo' href="#" alt='Termo de Uso'>Termo de Uso</a>
+      "|"
+      <a class='termo' href="#" alt='Política de Uso'>Política de Uso</a>
+    </span>
   </div>
 </div>
