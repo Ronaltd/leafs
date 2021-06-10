@@ -1,16 +1,25 @@
-<h1>Cupons de Desconto</h1>
+<div class="container-fluid">
+  <div class="card-company mt-5">
 
-<% @coupons.each do |coupon| %>
- <div>
-    <%= link_to company_path(coupon.company_id) do %>
-      <%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "50x50"%>
-      <%=  @companies.find(coupon.company_id).name %>
-      <%= coupon.discount %>
-      <%= coupon.code %> <br>
-    <% end %>
+    <h1 class="mt-4">Cupons de Desconto</h1>
+    <div class="d-flex justify-content-center">
+      <table class="content-table">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <% @coupons.each do |coupon| %>
+        <tbody>
+          <tr>
+            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "100x100", class: "rounded-circle mr-3" %></td>
+            <td><span class="mb-5"><%= coupon.discount %></span></td>
+            <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><%= link_to "Ir para o site", @companies.find(coupon.company_id).url, class: 'button-green ml-3 h6', target: "_blank" %></td>
+          </tr>
+        </tbody>
+        <%end%>
+      </table>
+    </div>
+      <%= link_to 'Ver por empresas', companies_path, class: 'button-green'%>
   </div>
-<%end%>
-
-<div>
 </div>
-

@@ -7,7 +7,14 @@
 </div>
 
 <div class='container mt-5'>
-  <h1 class='text-center mb-5'>Empresas Parceiras</h1>
+  <div class="row mb-5">
+    <div class="col-12 col-md-4 col-sm-6">
+      <%= link_to 'Ver todos os cupons', coupons_path, class: 'button-green'%>
+    </div>
+    <div class="col-12 col-md-8 ">
+      <h1 class='align-content-center'>Empresas Parceiras</h1>
+    </div>
+  </div>
   <div class='row'>
     <% @companies.each do |company| %>
       <div class=" col-lg-3  col-md-6 col-sm-6 mb-5">
