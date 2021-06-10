@@ -43,19 +43,44 @@ Dropoff.create(
   )
 
 Dropoff.create(
-  name: 'Dropp off 2',
-  address: 'Avenida Guilherme Dumont Vilares, 1015 Jardim Londrina - Morumbi, São Paulo - SP, 05640-001',
+  name: 'Dropp off 2 - G Barbosa',
+  address: 'R. Luiz Chagas, 55, Aracaju - SE, 49037-430',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 3',
-  address: 'Avenida Guilherme Dumont Vilares, 1015 Jardim Londrina - Morumbi, São Paulo - SP, 05640-001',
+
+  name: 'Dropp off 3 - Pão de aúcar',
+  address: 'R. José Seabra Batista,Jardins, Aracaju - SE, 49025-750',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 4',
+  name: 'Dropp off 4 - Extra',
+  address: 'Av. Adélia Franco, 3735 - Grageru, Aracaju - SE, 49025-620',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 5- Bompreço',
+  address: 'Av. Pedro Valadares, 780 - Jardins, Aracaju - SE, 49025-090',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropoff 6 - Shopping Jardins',
+  address: 'Avenida Ministro Geraldo Barreto Sobra, 215 - Jardins, Aracaju - SE, 49026-010',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropoff 7 - Mcdolnads',
+  address: 'Av. Hermes Fontes, 1118 - Suissa, Aracaju - SE, 49050-000',
+  opening_hours: '24h'
+  )
+
+Dropoff.create(
+  name: 'Dropp off 7',
   address: 'Av. Dr. Guilherme Dumont Vilares, 1450 - Jardim Londrina, São Paulo - SP, 05640-003',
   opening_hours: '24h'
   )
@@ -66,7 +91,7 @@ Coupon.create(
   code: 'DOCE',
   )
 
- Coupon.create(
+Coupon.create(
   company_id: 1,
   discount: 'Móveis selecionados com 10% de descontos',
   code: 'EXCLUSIVOMOVEIS',
@@ -78,10 +103,11 @@ Coupon.create(
   code: 'MELIUZ300',
   )
 
-  Coupon.create(
+Coupon.create(
   company_id: 2,
   discount: 'Cupom Americanas exclusivo concede R$15 OFF',
   code: 'CUPOMMELIUZ',
-  ) 
+  )
+
 
 puts 'all set'
