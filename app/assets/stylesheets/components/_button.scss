@@ -39,3 +39,17 @@
   color: white;
   text-decoration: none;
 }
+
+.button-transparent {
+  color: #505050;
+  border: 1px solid #505050;
+  padding: 8px 22px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.button-transparent:hover {
+  background:  #e6e6e6;
+  color: #1b1b1b;
+  text-decoration: none;
+}
