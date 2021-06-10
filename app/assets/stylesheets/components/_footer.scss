@@ -1,23 +1,10 @@
 
 .footer{
   background-color: #FFFFFF;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 0px 150px 0px 150px;
 }
 
-.row{
-  justify-content: center;
-  align-content: center;
-}
-
-.column-1{
-  background-color: #FFFFFF;
-  width: 700px;
-}
-
-.column-2{
+.icons-block{
   background-color: #FFFFFF;
   width: 300px;
   justify-content: center;
@@ -32,22 +19,16 @@
   text-align: center;
 }
 
-.hover{
-  color: rgba($color: #000000, $alpha: 0.3);
-}
 
 h4{
   color: rgba($color: #000000, $alpha: 0.6);
   font-weight: bold;
   font-size: 20px;
-}
-.title{
- 
-  font-size: 16px;
+  text-decoration: none;
 }
 
-.text{
-  font-size: 15px;
+.title{
+  font-size: 16px;
 }
 
 strong{
@@ -55,6 +36,7 @@ strong{
 }
 
 .copyright{
+  background-color:#FFFFFF;
   display: block;
   font-size: 14px;
   text-align: center;
@@ -65,4 +47,9 @@ strong{
 .termo{
   color: rgb(59, 59, 59);
   text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(59, 59, 59);
 }
