@@ -1,21 +1,22 @@
-<h2>Cupons de Desconto <%= @company.name %></h2>
-
-<div class="container text-center">
+<div class="container">
   <div class="card-company mt-5">
-    <%= image_tag "#{@company.logo}", size: "250x250" %>
-    <ul class='ul-company'>
-      <li class='li-company d-flex justify-content-between'>
-        <span class="cupom-sim"><i class="fas fa-ticket-alt"></i></span>
-        <span class="desconto">
-          <% @coupons.each do |coupon| %>
-          <div>
-            <%= coupon.discount %>
-            <span class="cupom"><%= coupon.code %></span>
-          <%end%>
-          </div>
-        </span>
-        <span class="cupom"></span>
-      </li>
-    </ul>
+    <%= image_tag "#{@company.logo}", size: "300x300" %>
+    <div class="d-flex justify-content-center">
+      <table class="content-table">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <% @coupons.each do |coupon| %>
+        <tbody>
+          <tr>
+            <td><span class="mb-5"><%= coupon.discount %></span></td>
+            <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+          </tr>
+        </tbody>
+        <%end%>
+      </table>
+    </div>
   </div>
 </div>
+
