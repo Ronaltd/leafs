@@ -1,16 +1,32 @@
-<h1>Cupons de Desconto</h1>
-
-<% @coupons.each do |coupon| %>
- <div>
-    <%= link_to company_path(coupon.company_id) do %>
-      <%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "50x50"%>
-      <%=  @companies.find(coupon.company_id).name %>
-      <%= coupon.discount %>
-      <%= coupon.code %> <br>
-    <% end %>
+<div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
+  <div class="container text-center">
+    <h1>Faça parte dessa mudança</h1>
+    <p>Além de ajudar o planeta, você também recebe descontos em suas lojas preferidas!</p>
+    <a class="button-orange" href="#">Cadastre-se</a>
   </div>
-<%end%>
-
-<div>
 </div>
 
+<div class="container-fluid">
+  <div class="card-company mt-3">
+    <h1 class="mt-3">Cupons de Desconto</h1>
+    <div class="d-flex justify-content-center">
+      <table class="content-table">
+        <thead>
+            <tr>
+            </tr>
+        </thead>
+        <% @coupons.each do |coupon| %>
+        <tbody>
+          <tr>
+            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "100x100", class: "rounded-circle mr-3" %></td>
+            <td><span class="mb-5 mr-3"><%= coupon.discount %></span></td>
+            <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><%= link_to "Ir para o site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
+          </tr>
+        </tbody>
+        <%end%>
+      </table>
+    </div>
+      <%= link_to 'Ver por empresas', companies_path, class: 'button-green mb-5'%>
+  </div>
+</div>
