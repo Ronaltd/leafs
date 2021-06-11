@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_164524) do
 
   create_table "items", force: :cascade do |t|
     t.bigint "leaf_id", null: false
-    t.string "type"
+    t.string "item_type"
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -64,9 +64,10 @@ ActiveRecord::Schema.define(version: 2021_06_09_164524) do
   create_table "leafs", force: :cascade do |t|
     t.integer "credit"
     t.bigint "user_id", null: false
-    t.bigint "dropoff_id", null: false
+    t.bigint "dropoff_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "accepted", default: false, null: false
     t.index ["dropoff_id"], name: "index_leafs_on_dropoff_id"
     t.index ["user_id"], name: "index_leafs_on_user_id"
   end
