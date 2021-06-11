@@ -1,0 +1,18 @@
+<h2>Novo Leaf</h2>
+
+
+<%= simple_form_for(:items, url: leafs_path) do |f| %>
+  <%= f.input :vidro, label: 'Vidro', as: :integer %>
+  <%= f.input :papel, label: 'Papel',as: :integer %>
+  <%= f.input :plastico, label: 'Plástico', as: :integer %>
+  <%= f.input :metal, label: 'Metal',as: :integer %>
+  <%= f.submit %>
+<% end %>
+
+<div>
+  <h4>Tabela de Conversão</h4>
+   <p>  Vidro    -   1 leaf/garrafa </p>
+   <p>   Papel    -   1 leaf/kg </p>
+   <p>  Plástico -   4 leafs/kg </p>
+   <p>  Metal    -  15 leafs/kg </p>
+</div>

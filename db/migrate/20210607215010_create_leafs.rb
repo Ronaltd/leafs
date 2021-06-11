@@ -4,7 +4,7 @@ class CreateLeafs < ActiveRecord::Migration[6.0]
       t.integer :credit
       t.string :items
       t.references :user, null: false, foreign_key: true
-      t.references :dropoff, null: false, foreign_key: true
+      t.references :dropoff, foreign_key: true
 
       t.timestamps
     end

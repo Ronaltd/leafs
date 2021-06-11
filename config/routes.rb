@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   
   resources :dropoffs, only: [:index]
 
-  resources :items, only: [:index]
+  resources :leafs, only: [:index, :show, :new, :create, :update]
+    
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
