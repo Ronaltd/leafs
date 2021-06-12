@@ -2,12 +2,15 @@ class BasketsController < ApplicationController
  
   def index
     @baskets = Basket.where(user: current_user)
+    @coupons = Coupon.all
+    @companies = Company.all
+
   end
 
   def create
     @basket = Basket.new
     @basket.user = current_user
-    @basket.coupon = Coupon.find(params[:id])
+    @basket.coupon = Coupon.find(params[:coupon_id])
     if @basket.user.leafs_balance >= @basket.coupon.leafs_value
       @basket.debit = @basket.coupon.leafs_value
     else

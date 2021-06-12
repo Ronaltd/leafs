@@ -21,7 +21,7 @@
             <td><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
             <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
             <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
-            <td><%= link_to "Adquira este cupom", coupon_baskets_path(coupon), action: :create, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
+            <td><%= link_to "Adquirir", coupon_baskets_path(coupon.id), method: :create, data:{confirm: "Tem certeza? Valor: #{coupon.leafs_value} leafs"}, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>

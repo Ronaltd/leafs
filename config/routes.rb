@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:index, :show]
   
-  resources :coupons, only: [:index] do
-    # resources :baskets, only: [:create]
-    post 'basket', action: :create,  controller: 'baskets', as: 'baskets'
+  resources :coupons, only: [:index, :show] do
+    resources :baskets, only: [:create]
+    # post 'basket', action: :create,  controller: 'baskets', as: 'baskets'
   end
   resources :baskets, only: [:index]
   

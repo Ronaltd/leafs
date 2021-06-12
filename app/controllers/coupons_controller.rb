@@ -5,4 +5,7 @@ class CouponsController < ApplicationController
     @coupons = Coupon.all
     @companies = Company.all
   end
+
+  def show
+  end
 end

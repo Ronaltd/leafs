@@ -3,6 +3,7 @@ class LeafsController < ApplicationController
 
   def index
     @leafs = Leaf.all
+    @baskets = Basket.where(user: current_user)
   end
   
   def show
