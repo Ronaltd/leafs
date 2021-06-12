@@ -25,7 +25,7 @@ class BasketsController < ApplicationController
     else
       redirect_to coupons_path, notice: 'Operação não concluída. Tente novamente'
     end
-
+    
   end
 end
  

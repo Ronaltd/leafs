@@ -2,8 +2,9 @@ class LeafsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new] 
 
   def index
-    @leafs = Leaf.all
     @baskets = Basket.where(user: current_user)
+    @leafs = Leaf.where(user: current_user)
+    @balance = @baskets | @leafs
   end
   
   def show
@@ -36,7 +37,7 @@ class LeafsController < ApplicationController
       redirect_to @leaf, notice: 'Leaf atualizado com sucesso.'
     else
       render :show, notice: "Atualização não realizada."
-    end
+    end 
     
   end
 
