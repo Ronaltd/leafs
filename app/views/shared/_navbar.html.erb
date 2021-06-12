@@ -37,8 +37,11 @@
         <!-- -------------------------- -->
 
         <li class="nav-item dropdown ">
-
+          <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
           <%= image_tag "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Cupons", coupons_path, class: "dropdown-item" %>
             <%= link_to "Simular Leafs", "#", class: "dropdown-item" %>
@@ -47,7 +50,7 @@
         </li>
       <% else %>
         <li class="nav-item ">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         <li class="nav-item ">
           <%= link_to "Empresas Parceiras", companies_path, class: "nav-link" %>
         </li>
