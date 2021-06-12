@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center container">
   <div class="col-6 ">
-    <div class="card-company mt-5">
+    <div class="card-company">
 
       <h2 class="my-3">Sign up</h2>
 
@@ -8,10 +8,32 @@
         <%= f.error_notification %>
 
         <div class="form-inputs mx-5">
+          <%= f.input :username,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "username" }%>
+          <div class='row'>
+            <div class='col-6'>
+              <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "first name" }%>
+            </div>
+            <div class='col-6'>
+              <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "last name" }%>
+            </div>
+          </div>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
+          <%= f.input :address,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "address" }%>            
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

@@ -88,7 +88,7 @@ Dropoff.create(
 Coupon.create(
   company_id: 1,
   discount: 'Cupom Extra de 30% de desconto Dia dos namorados',
-  code: 'DOCE',
+  code: 'LEAFSDOCE',
   )
 
 Coupon.create(
@@ -100,13 +100,13 @@ Coupon.create(
 Coupon.create(
   company_id: 4,
   discount: 'Cupom Dell de R$300 OFF acima de R$6.499 + Frete Grátis',
-  code: 'MELIUZ300',
+  code: 'LEAFS300',
   )
 
 Coupon.create(
   company_id: 2,
   discount: 'Cupom Americanas exclusivo concede R$15 OFF',
-  code: 'CUPOMMELIUZ',
+  code: 'CUPOMLEAFS20',
   )
 
 
