@@ -16,8 +16,9 @@
   <p>Cupons utilizados</p>
   <% @baskets.each do |basket| %>
     <div>
-      <p>Leafs debitados: <%= basket.debit %> em <%= basket.created_at.strftime('%d/%m/%Y')
-    %></p> 
+      <%= link_to baskets_path do %>
+        <p>Leafs debitados: <%= basket.debit %> em <%= basket.created_at.strftime('%d/%m/%Y') %></p>
+      <% end %>
     </div>
   <%end%>
   </div>
