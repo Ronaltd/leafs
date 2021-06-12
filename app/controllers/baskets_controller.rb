@@ -1,8 +1,8 @@
 class BasketsController < ApplicationController
  
   def index
-    @baskets = Basket.where(user: current_user)
-    @coupons = Coupon.all
+    @baskets = current_user.baskets
+    @coupons = @baskets.map {|basket| basket.coupon}
     @companies = Company.all
 
   end
@@ -20,7 +20,7 @@ class BasketsController < ApplicationController
     if @basket.save
       balance = @basket.user.leafs_balance - @basket.debit
       @basket.user.update(leafs_balance: balance ) 
-      redirect_to coupons_path, notice: 'Cupom adquirido com sucesso.'
+      redirect_to baskets_path, notice: 'Cupom adquirido com sucesso.'
     else
       render 'coupon/index', notice: 'Operação não concluída. Tente novamente'
     end
