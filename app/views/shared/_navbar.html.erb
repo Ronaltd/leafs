@@ -18,22 +18,28 @@
           <%= link_to "Empresas Parceiras", companies_path, class: "nav-link" %>
         </li>
 
-        <li class="nav-item mt-2">
-          <% total = 0 %>
-          <% leafs.each do |leaf| %>
-            <% total += leaf.credit%>
-          <% end %>
-          <p><i class="fab fa-envira green"></i><%= link_to "#{total}", leafs_path %></p>
-        </li>
-
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown"> -->
 
         <li class="nav-item px-1 ">
           <%= link_to "Pontos de Coleta", dropoffs_path, class: "nav-link" %>
         </li>
         <li class="nav-item pl-4 ">
-          <p class='nav-link'> Olá, <%= current_user.username %> </p>
+          <p class='nav-link'>Olá, <%= current_user.username %></p>
         </li>
+
+        <!-- Contador leafs aprovados -->
+
+        <li class="nav-item mt-2">
+          <% total = 0 %>
+          <% leafs.each do |leaf| %>
+            <% if leaf.accepted %>
+              <% total += leaf.credit%>
+            <% end %>
+          <% end %>
+          <p><i class="fab fa-envira green"></i><%= link_to "#{total}", leafs_path %></p>
+        </li>
+        <!-- -------------------------- -->
+
         <li class="nav-item dropdown ">
 
           <%= image_tag "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
