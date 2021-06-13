@@ -4,7 +4,19 @@
       <div class="d-flex h-100 align-items-center justify-content-center">
         <div class="banner">
           <h1></h1>
-          <p></p>
+          <p>
+           <% total = 0%>
+            <% leafs.each do |leaf| %>
+              <% if leaf.accepted %>
+                <% leaf.items.each do |item| %>
+                  <% total += item.amount %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <span id='counter-rec' style="display: none;"><%= total %></span>
+            <h1><span id="number-change">0</span> toneladas</h1>
+            <p>De lixo reciclado através do nosso app.</p>
+          </p>
         </div>
       </div>
     </div>
