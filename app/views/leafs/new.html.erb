@@ -6,10 +6,10 @@
 
 
         <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form' }) do |f| %>
-          <%= f.input :vidro, label: 'Vidro', as: :integer %>
-          <%= f.input :papel, label: 'Papel',as: :integer %>
-          <%= f.input :plastico, label: 'Plástico', as: :integer%>
-          <%= f.input :metal, label: 'Metal',as: :integer %>
+          <%= f.input :vidro, label: 'Vidro', as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
           <%= f.submit class: 'button-green', style: 'width: 100%' %>
         <% end %>
 
@@ -20,7 +20,7 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #1eae98;">
                 <div class="card-body">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Vidro (und)</h6>
+                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Vidro (Kg)</h6>
                   <p class="card-text leaf-qtdd"> <i class="fab fa-envira green"></i> 1 </p>
                 </div>
               </div>
