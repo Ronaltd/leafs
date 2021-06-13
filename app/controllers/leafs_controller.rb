@@ -21,9 +21,7 @@ class LeafsController < ApplicationController
     if @leaf.save
       create_items(@leaf, params[:items])
       @leaf.update(credit:calculate_credit(@leaf))
-      balance = @leaf.user.leafs_balance + @leaf.credit
-      @leaf.user.update(leafs_balance: balance )
-      redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
+      redirect_to @leaf, notice: 'Leafs calculados com sucesso.'
     else
       render :new
     end
@@ -36,7 +34,9 @@ class LeafsController < ApplicationController
     
     if @leaf.update(dropoff: @dropoff, accepted: true)
       calculate_leafs
-      redirect_to @leaf, notice: 'Leaf atualizado com sucesso.'
+      balance = @leaf.user.leafs_balance + @leaf.credit
+      @leaf.user.update(leafs_balance: balance)
+      redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
     else
       render :show, notice: "Atualização não realizada."
     end 
