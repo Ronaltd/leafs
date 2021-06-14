@@ -1,24 +1,42 @@
-<h2>My Leaf</h2>
+<div class="container">
+  <div class="card-company">
 
-<p>Valor creditado: <%= @leaf.credit %>leafs</p>
-<p>Status: <%= @leaf.accepted ? "Aprovado" : "Pendente"  %></p>
-<p>Estação de Reciclagem: <%= @leaf.dropoff ? @leaf.dropoff.name : "Pendente" %></p>
+    <h2 class="mb-5">My Leaf</h2>
 
-<p>A Natureza agradece! Material para reciclagem:</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Valor creditado</th>
+          <th scope="col">Status</th>
+          <th scope="col">Estação de Reciclagem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="fab fa-envira green mr-1"></i><%= @leaf.credit %></td>
+          <td><%= @leaf.accepted ? "Aprovado" : "Pendente"  %></td>
+          <td><%= @leaf.dropoff ? @leaf.dropoff.name : "Pendente" %></td>
+        </tr>
+      </tbody>
+    </table>
 
-<ul>
-<% @leaf.items.each do |item| %>
-<li> <%= "#{item.amount}kg - #{item.item_type}" %> </li>
+    <h4 class="mt-5 mb-3 text-center">A Natureza agradece! Material para reciclagem:</h4>
 
-<% end %>
-</ul>
+    <ul class="list-group">
+      <% @leaf.items.each do |item| %>
+      <li class="list-group-item"> <%= "#{item.amount}kg - #{item.item_type}" %> </li>
 
-Atualizar local da entrega do material:
+      <% end %>
+    </ul>
 
-<%= simple_form_for (@leaf) do |f| %>
-  <%= f.input :dropoff_id, label: 'Estação de Reciclagem', as: :integer %>
-  <%= f.submit %>
-<% end %>
+    <h4 class="mt-5 mb-3">Atualizar local da entrega do material:</h4> 
+
+    <%= simple_form_for (@leaf) do |f| %>
+      <%= f.input :dropoff_id, label: 'Estação de Reciclagem', as: :integer %>
+      <%= f.submit %>
+    <% end %>
 
 
-<%= link_to "Voltar para Meus Leafs", leafs_path %>
+    <%= link_to "Voltar para Meus Leafs", leafs_path %>
+  </div>
+</div>

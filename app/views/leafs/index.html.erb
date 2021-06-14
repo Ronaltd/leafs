@@ -1,15 +1,31 @@
-<div class='card-company'>
-  <h2>Meus Leafs</h2>
+<div class="container">
+
+  <div class='card-company'>
+    <h2>Meus Leafs</h2>
+
+  <div class="d-flex justify-content-center">
+      <table class="content-table">
+        <thead>
+            <tr>
+              <td><span>Leafs creditados</span></td>
+              <td><span>Data</span></td>
+            </tr>
+        </thead>
+        <% @leafs.each do |leaf| %>
+          <%= link_to leaf_path(leaf.id) do %>
+            <tbody>
+              <tr>
+                <td><span><i class="fab fa-envira green mr-1"></i><strong><%= leaf.credit %></strong> </span></td>
+                <td><span><%= leaf.created_at.strftime('%d/%m/%Y')%></span></td>
+              </tr>
+            </tbody>
+          <%end%>
+        <%end%>
+      </table>
+  </div>
+
+    <%= link_to "Novo Leaf", new_leaf_path, class: "button-green" %>
+  </div>
 
 
-  <% @leafs.each do |leaf| %>
-  <div>
-      <%= link_to leaf_path(leaf.id) do %>
-      <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')
-  %></p> 
-      <% end %>
-    </div>
-  <%end%>
-
-  <%= link_to "Novo Leaf", new_leaf_path %>
 </div>
