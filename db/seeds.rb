@@ -89,24 +89,28 @@ Coupon.create(
   company_id: 1,
   discount: 'Cupom Extra de 30% de desconto Dia dos namorados',
   code: 'LEAFSDOCE',
+  leafs_value: 10
   )
 
 Coupon.create(
   company_id: 1,
   discount: 'Móveis selecionados com 10% de descontos',
   code: 'EXCLUSIVOMOVEIS',
+  leafs_value: 20
   )
 
 Coupon.create(
   company_id: 4,
   discount: 'Cupom Dell de R$300 OFF acima de R$6.499 + Frete Grátis',
   code: 'LEAFS300',
+  leafs_value: 100
   )
 
 Coupon.create(
   company_id: 2,
   discount: 'Cupom Americanas exclusivo concede R$15 OFF',
   code: 'CUPOMLEAFS20',
+  leafs_value: 15
   )
 
 

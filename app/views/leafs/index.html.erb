@@ -27,15 +27,29 @@
 
   
 
+  <h4>Saldo:  <%= current_user.leafs_balance %></h4>
 
   <% @leafs.each do |leaf| %>
+  <% if leaf.user == current_user %>
+    <div>
+        <%= link_to leaf_path(leaf.id) do %>
+        <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')
+    %></p>
+        <% end %>
+      </div>
+  <%end%>
+  <%end%>
+
   <div>
-      <%= link_to leaf_path(leaf.id) do %>
-      <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')
-  %></p> 
+  <p>Cupons utilizados</p>
+  <% @baskets.each do |basket| %>
+    <div>
+      <%= link_to baskets_path do %>
+        <p>Leafs debitados: <%= basket.debit %> em <%= basket.created_at.strftime('%d/%m/%Y') %></p>
       <% end %>
     </div>
   <%end%>
+  </div>
 
   <%= link_to "Novo Leaf", new_leaf_path %>
 </div>

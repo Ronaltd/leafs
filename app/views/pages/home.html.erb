@@ -1,10 +1,21 @@
+<!-- header set turbolinks in order to reload -->
+<% content_for :head do %>
+  <meta name="turbolinks-visit-control" content="reload">
+<% end %>
+
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="3000" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_637583458_347721.jpg);">
       <div class="d-flex h-100 align-items-center justify-content-center">
         <div class="banner">
           <h1></h1>
-          <p></p>
+          <div style="text-align: center;">
+            <!-- Text counter up banner -->
+            <span  id='counter-rec' style="display: none;">0</span>
+            <h1><span data-total='<%=@total %>' id="number-change" style='font-size: 130px;'>0</span> kg</h1>
+            <p style='font-size: 25px;'>De lixo reciclado através do leafs.</p>
+
+          </div>
         </div>
       </div>
     </div>

@@ -12,6 +12,11 @@
 
     <!-- Mapbox css -->
     <%= stylesheet_pack_tag 'application' %>
+
+    <!-- head called on home.html.erb for turbolinks reload -->
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
   </head>
 
   <body class="d-flex flex-column min-vh-100">

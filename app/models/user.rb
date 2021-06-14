@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :leafs
-  
+  has_many :baskets      
   has_one_attached :photo
 end
 
