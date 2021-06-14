@@ -30,8 +30,7 @@
         <!-- Contador leafs aprovados -->
 
         <li class="nav-item mt-2">
-          <!-- @user_leafs on application_controller.rb -->
-          <p><i class="fab fa-envira green"></i><%= link_to "#{@user_leafs}", leafs_path %></p>
+          <p><i class="fab fa-envira green"></i><%= link_to "#{current_user.leafs_balance}", leafs_path %></p>
         </li>
 
         <!-- -------------------------- -->
