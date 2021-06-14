@@ -1,30 +1,28 @@
-const counter = document.getElementById('counter-rec');
-const numChange = document.getElementById('number-change');
+const counter = document.getElementById('counter-rec'); // counter limit ruby
+const numChange = document.getElementById('number-change'); // text to be displayed counting
 const speed = 200;
+console.log()
 
-// const countersFunc = () => {
-//   cunters.forEach(counter => {
-//     const updateCount()
-//   })
-// }
+const formatNumber = new Intl.NumberFormat('pt-BR')
 
 const initCounter = () => {
-
-  const target = +counter.innerText;
-  let count = +numChange.innerText;
-  // console.log(count);
+  const target = numChange.dataset.total; // ruby code
+  let count = parseInt(counter.innerText); // text to be changed
 
   const inc = target / speed;
-  // console.log(inc);
 
   if (count < target) {
-    numChange.innerText = `${Math.ceil(count + inc)}`;
+    let newCount = Math.ceil(count + inc)
+    counter.innerText = newCount;
+    numChange.innerText = formatNumber.format(newCount);
     setTimeout(initCounter, 1);
   } else {
     count = target;
-  }
-
-
+    numChange.innerText = formatNumber.format(target);
+  };
 }
 
+
 export { initCounter };
+
+

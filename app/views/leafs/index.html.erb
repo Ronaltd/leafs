@@ -3,12 +3,14 @@
 
 
   <% @leafs.each do |leaf| %>
-  <div>
-      <%= link_to leaf_path(leaf.id) do %>
-      <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')
-  %></p> 
-      <% end %>
-    </div>
+  <% if leaf.user == current_user %>
+    <div>
+        <%= link_to leaf_path(leaf.id) do %>
+        <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')
+    %></p>
+        <% end %>
+      </div>
+  <%end%>
   <%end%>
 
   <%= link_to "Novo Leaf", new_leaf_path %>
