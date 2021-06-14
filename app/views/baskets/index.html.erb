@@ -1,8 +1,5 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="container-fluid">
+  <div class="card-company">
 
 <h1>Meus Cupons</h1>
 
@@ -19,8 +16,6 @@
 </div>
 
 
-<div class="container-fluid">
-  <div class="card-company mt-2">
     <h3 class="mt-3">Cupons Utilizados</h3>
     <div class="d-flex justify-content-center">
       <table class="content-table">
@@ -34,8 +29,11 @@
             <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "100x100", class: "rounded-circle mr-1" %></td>
             <td><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
             <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>
       </table>
     </div>
+  </div>  
+</div>   
