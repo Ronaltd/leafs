@@ -30,14 +30,10 @@
         <!-- Contador leafs aprovados -->
 
         <li class="nav-item mt-2">
-          <% total = 0 %>
-          <% leafs.each do |leaf| %>
-            <% if leaf.accepted %>
-              <% total += leaf.credit%>
-            <% end %>
-          <% end %>
-          <p><i class="fab fa-envira green"></i><%= link_to "#{total}", leafs_path %></p>
+          <!-- @user_leafs on application_controller.rb -->
+          <p><i class="fab fa-envira green"></i><%= link_to "#{@user_leafs}", leafs_path %></p>
         </li>
+
         <!-- -------------------------- -->
 
         <li class="nav-item dropdown ">
