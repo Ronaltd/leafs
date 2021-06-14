@@ -278,12 +278,6 @@ Dropoff.create(
   )
 
 Dropoff.create(
-  name: ' Mercado Municipal de Caete ',
-  address: ' R. Pres. Kenedy, Caeté - MG, 34800-000',
-  opening_hours: '24h'
-)
-
-Dropoff.create(
   name: 'Supermercados BH - Centro',
   address: 'Av. Paraná, 470 - Centro, Belo Horizonte - MG, 30120-020',
   opening_hours: '24h'
@@ -475,14 +469,14 @@ Coupon.create(
 Coupon.create(
   company_id: 4,
   discount: ' Código Dell de R$200 de desconto',
-  code: ' Dell200',
+  code: ' LEAFS200',
   leafs_value: 50
   )
     
 Coupon.create(
   company_id: 3,
   discount: ' Cupom de desconto Privalia 20% OFF',
-  code: ' Leafs20',
+  code: ' LEAFS20',
   leafs_value: 20
   )
 
@@ -495,10 +489,47 @@ Coupon.create(
 
 Coupon.create(
   company_id: 6,
-  discount: ' Ganhe 25% OFF nos itens TOPNetshoes ',
+  discount: 'Ganhe 25% OFF nos itens TOPNetshoes ',
   code: ' TOPROUPAS',
   leafs_value: 20
   )
+
+  Coupon.create(
+  company_id: 6,
+  discount: 'Cupom Netshoes todos os tênis com 20% OFF',
+  code: 'SUPERTENIS',
+  leafs_value: 20
+  )
+
+  Coupon.create(
+  company_id: 11,
+  discount: ' Economize 15% com cupom C&A em suas compras',
+  code: ' 15OFF',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 11,
+  discount: ' Cupom de Desconto C&A com 10% OFF',
+  code: ' BEMVINDO10 ',
+  leafs_value: 10
+  )
+
+Coupon.create(
+  company_id: 18,
+  discount: ' Use o cupom Casas Bahia com até 20% OFF',
+  code: ' VCMERECE',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 18,
+  discount: ' Cupom Casas Bahia de R$ 300 de desconto em celulares',
+  code: ' LEAFS300 ',
+  leafs_value: 100
+  )
+
+
 
 
   
