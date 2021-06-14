@@ -1,4 +1,4 @@
-  <div class="container">
+  <%# <div class="container"> %>
   <%# <div class="map-overlay">
     <fieldset>
       <input id="feature-filter" type="text" placeholder="Filter results by name">
@@ -9,10 +9,10 @@
     <div id="geocoder" class="geocoder"></div>
     <div
       id="map"
-      style="width: 98%; height: 650px;"
+      style="width: 100%; height: 750px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
   </div>
 
-</div>
+<%# </div> %>
