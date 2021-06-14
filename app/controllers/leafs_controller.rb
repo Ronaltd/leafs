@@ -3,9 +3,14 @@ class LeafsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new] 
 
   def index
-    @baskets = Basket.where(user: current_user)
-    @leafs = Leaf.where(user: current_user)
-    @balance = @baskets | @leafs
+    @baskets = current_user.baskets
+    @leafs = current_user.leafs.where(accepted: true)
+    @balance = (@baskets + @leafs).sort_by { |balance| balance.created_at}
+    
+    @leafs_pendent = current_user.leafs.where(accepted: false)
+    @leaf_pendent_total = 0
+    @leafs_pendent.each { |leaf_pendent| @leaf_pendent_total += leaf_pendent.credit }
+  
   end
   
   def show
@@ -18,12 +23,16 @@ class LeafsController < ApplicationController
 
   def create
     @leaf = Leaf.new(user: current_user, credit: 0, accepted: false)
-
-    if @leaf.save
-      create_items(@leaf, params[:items])
-      @leaf.update(credit:calculate_credit(@leaf))
-      redirect_to @leaf, notice: 'Leafs calculados com sucesso.'
+    if validate_items(params)
+      if @leaf.save
+        create_items(@leaf, params[:items])
+        @leaf.update(credit:calculate_credit(@leaf))
+        redirect_to @leaf, notice: 'Seus leafs serão creditados em sua conta em até 48hrs após confirmação de entrega. Obrigado!'
+      else
+        render :new
+      end
     else
+      flash[:notice] = 'Oops, quantidade insuficiente!'
       render :new
     end
   end
@@ -45,6 +54,10 @@ class LeafsController < ApplicationController
   end
 
   private
+
+  def validate_items(params)
+     params[:items][:vidro].to_i > 0 || params[:items][:papel].to_i > 0 || params[:items][:plastico].to_i > 0 || params[:items][:metal].to_i > 0
+  end
 
   def create_items(leaf, params)
     Item.create(leaf: leaf,item_type: 'vidro',  amount: params[:vidro].to_i) if params[:vidro].to_i.positive?

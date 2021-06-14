@@ -8,44 +8,102 @@
 <!--Restante do Profile-->
 <div class='container p-3'>
   <!--Saldo-->
-  <div class="d-flex flex-row justify-content-start  mt-4">
+  <div class="d-flex justify-content-start mt-4">
     <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3">
-      <div class="">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :thumb, gravity: :face, class:"rounded-circle" %>
-        <% else %>
-          <%= image_tag "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg", class: "rounded-circle", size: '100x100' %>
-        <% end %>        
-        <h4>Bem-vindo, <%= current_user.first_name %> <%= current_user.last_name %></h4>
-        <h4>Saldo:  <%= current_user.leafs_balance %></h4>
-        <!--Inserir aqui If e Else para fazer a conta do saldo-->
+      <div class='row align-items-center'>
+        <div class="profile-image col-md-auto pl-3">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, height: 120, width: 120, crop: :thumb, class:"rounded-circle" %>
+          <% else %>
+            <%= image_tag "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg", class: "rounded-circle", size: '100x100' %>
+          <% end %>        
+        </div>
+        <!--Foto Profile-->
+        <div class="profile-column col p-0">
+          <h4 class='mb-0'><%= current_user.first_name %> <%= current_user.last_name %></h4>
+          <div class='d-flex justify-content-start align-items-between'>
+            <p class='mb-0 pt-2 pr-2'> <a href="#"> Gerenciar Conta </a></p>
+            <p class='mb-0 pt-2 pl-2'> <a href="#"> Sair </a></p>
+          </div>
+        </div>
+        <!--Valor do Saldo-->
+        <div class="profile-column col-md-auto">
+          <h4 class='text-right mb-0'> Saldo <i class="fab fa-envira"></i> <%= current_user.leafs_balance %></h4>
+          <p class='mb-0 pt-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
+        </div>
+        <div class=col-md-auto>
+          <div class='btn btn-success'> <%= link_to "Novo Leaf", new_leaf_path %> </div>
+        </div>
       </div>
     </div>
   </div>
 
     <!--Extrato-->
-  <div class="  col-10 col-md-6 col-lg-3 shadow bg-white p-4 mb-2 rounded ">
-        <% @balance.sort_by { |element| element.created_at }.each do |item| %>
-          <% if item.instance_of?(Leaf) %>
-            <p class='text-success'> <%= item.created_at.strftime('%d/%m/%Y')%> -------------------- +<%= item.credit %> </p>
-          <% else %>
-            <p class='text-danger'> <%= item.created_at.strftime('%d/%m/%Y')%> -------------------- -<%= item.debit %> </p>
-          <% end %>
-        <% end %>
 
+  <div class='row p-3'>
+    <div class=" col-10 col-md-6 col-lg-7 shadow bg-white p-4 mb-2 rounded ">
+      <h4> Extrato da Conta</h4>
+
+      <table class="profile-table">
+        <thead class="profile-head-table">
+          <tr class='align-items-center'>
+            <th scope="col" class="col-3">Data</th>
+            <th scope="col" class="col">Operação</th>
+            <th scope="col" class="col-2">Leafs</th>
+          </tr>
+        </thead>
+        <tbody class="profile-body-table">
+          <% @balance.each do |item| %>
+            <% if item.instance_of?(Leaf) %>
+              <tr>
+                <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
+                <td class='success'> <%= item.dropoff.name %> </td> 
+                <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
+              </tr>
+            <% else %>
+              <tr>
+                <td class='danger'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
+                <td class='danger'> <%= item.coupon.company.name %> - <%= item.coupon.discount %> </td>
+                <td class='danger'> - <i class="fab fa-envira"></i> <%= item.debit %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+      
+    </div>
+
+    <div class="user-balance col-10 col-md-6 col-lg-5 shadow bg-white p-4 mb-2 rounded ">
+      <div class="list-links">
+        <h4> </h4>
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Meus Leafs Pendentes</p>
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Cupons Adquiridos</p>
+        
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Impacto Ambiental</p>
+
+      </div>     
+
+    </div>
   </div>
 
   
 
 
   <% @leafs.each do |leaf| %>
-    <% if leaf.user == current_user %>
       <div>
         <%= link_to leaf_path(leaf.id) do %>
           <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
         <% end %>
       </div>
-    <%end%>
+  <%end%>
+
+
+  <% @leafs_pendent.each do |leaf| %>
+      <div>
+        <%= link_to leaf_path(leaf.id) do %>
+          <p>Leafs calculados - pendente: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
+        <% end %>
+      </div>
   <%end%>
 
   <div>
@@ -59,5 +117,4 @@
   <%end%>
   </div>
 
-  <%= link_to "Novo Leaf", new_leaf_path %>
 </div>
