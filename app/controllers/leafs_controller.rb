@@ -15,7 +15,6 @@ class LeafsController < ApplicationController
   
   def show
     @leaf = Leaf.find(params[:id])
-    @code = generate_code
   end
   
   def new
@@ -74,10 +73,4 @@ class LeafsController < ApplicationController
     credit
   end
 
-  def generate_code
-    charset = %w[1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z]
-    size = 6
-    (0...size).map { charset.to_a[SecureRandom.random_number(charset.size)] }.join
-  end
-  
 end
