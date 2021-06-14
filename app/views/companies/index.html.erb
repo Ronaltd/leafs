@@ -1,9 +1,18 @@
-<div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
-  <div class="container text-center mt-5">
-    <h1>Faça parte dessa mudança</h1>
-    <a class="button-orange" href="#">Cadastre-se</a>
+<!--BANNER DIFERENTE QUANDO USER-->
+<% if user_signed_in? %>
+  <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
+    <div class="container text-center mt-5">
+      <h1> bem-vindo!</h1> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
+    <div class="container text-center mt-5">
+      <h1>Faça parte dessa mudança</h1>
+      <a class="button-orange" href="#">Cadastre-se</a>
+    </div>
+  </div>
+<% end %>
 
 <div class='container mt-5'>
   <div class="row mb-5">
