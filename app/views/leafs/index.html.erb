@@ -1,5 +1,31 @@
-<div class='card-company'>
-  <h2>Meus Leafs</h2>
+<div class='container p-5'>
+
+<!--BANNER DA PÁGINA DO USUÁRIO-->
+
+  <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
+    <div class="container text-center mt-5">
+      <h3>Você contribuiu reciclando ____ KG de lixo com a Leafs!! </h3>
+    </div>
+  </div>
+<!--Restante do Profile-->
+  <!--Saldo-->
+  <div class="d-flex flex-row justify-content-start  mt-4">
+    <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3">
+      <div class="">
+        
+        <h4>Bem-vindo, <%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <p>Saldo</p>
+        <!--Inserir aqui If e Else para fazer a conta do saldo-->
+      </div>
+    </div>
+  </div>
+
+    <!--Extrato-->
+  <div class="  col-10 col-md-6 col-lg-3 shadow bg-white p-3 mb-2 rounded ">
+
+  </div>
+
+  
 
 
   <% @leafs.each do |leaf| %>
