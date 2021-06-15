@@ -362,18 +362,6 @@ Dropoff.create(
 )
 
 Dropoff.create(
-  name: ' Pão de Açúcar – Aracaju ',
-  address: ' R. José Seabra Batista, s/n - Jardins, Aracaju - SE, 49025-750',
-  opening_hours: '24h'
-)
-
-Dropoff.create(
-  name: ' Extra - Aracajú ',
-  address: ' Av. Adélia Franco, 3735 - Grageru, Aracaju - SE, 49025-620',
-  opening_hours: '24h'
-)
-
-Dropoff.create(
   name: ' Pão de Açúcar - Sudoeste',
   address: ' CCSW 06 Ljs 4/5, CCSW 6, Brasília - DF, 71505-000',
   opening_hours: '24h'

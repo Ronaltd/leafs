@@ -2,7 +2,7 @@
   <div class="col-6 ">
     <div class="card-company">
 
-      <h2 class="my-3">Sign up</h2>
+      <h2 class="my-3">Cadastro</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -15,12 +15,14 @@
           <div class='row'>
             <div class='col-6'>
               <%= f.input :first_name,
+                      label: "Nome",
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "first name" }%>
             </div>
             <div class='col-6'>
               <%= f.input :last_name,
+                      label: "Sobrenome",
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last name" }%>
@@ -31,17 +33,19 @@
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>         
           <%= f.input :password,
+                      label: "Senha",
                       required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      hint: ("#{@minimum_password_length} caracteres no mínimo" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      label: "Confirmação da Senha",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
-          <%= f.input :photo, as: :file%>
+          <%= f.input :photo, label: "Foto", as: :file%>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: 'button-green mb-2' %>
+          <%= f.button :submit, "Cadastre-se", class: 'button-green mb-2' %>
         </div>
       <% end %>
 
