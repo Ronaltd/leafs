@@ -12,28 +12,148 @@ puts 'Cleaning database'
 Company.destroy_all
 
 Company.create!(
-  name: 'Extra',
-  url: 'https://www.extra.com.br/',
-  logo: 'https://iguatemi.com.br/saocarlos/sites/saocarlos/files/logo-1360167379150.png'
+  name: 'Magalu',
+  url: 'https://clube.magazineluiza.com.br/',
+  logo: 'https://staticz.com.br/img/logos/magazine-luiza.png'
   )
 
 
 Company.create!(
   name: 'Americanas',
   url: 'https://www.americanas.com.br/',
-  logo: 'data:image/png;base64,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'
+  logo: 'https://staticz.com.br/img/logos/americanas.png'
   )
 
 Company.create!(
   name: 'Privalia',
-  url: '  https://br.privalia.com/public/',
-  logo: 'https://store-images.s-microsoft.com/image/apps.29966.9007199267044076.c76415e3-cff7-4f25-98df-796755acc41d.40ea793e-5e29-4d38-adef-a3205d667644?mode=scale&q=90&h=300&w=300'
+  url: ' https://br.privalia.com/public/',
+  logo: 'https://staticz.com.br/img/logos/privalia.png'
   )
 
 Company.create!(
   name: 'Dell',
   url: 'https://www.dell.com/pt-br',
-  logo: 'https://image.pngaaa.com/396/600396-small.png'
+  logo: 'https://staticz.com.br/img/logos/dell.png'
+  )
+
+Company.create!(
+  name: 'Ifood',
+  url: 'https://www.ifood.com.br/lista-restaurantes',
+  logo: 'https://staticz.com.br/img/logos/ifood.png'
+  )
+
+Company.create!(
+  name: 'Netshoes',
+  url: 'https://www.netshoes.com.br/',
+  logo: 'https://staticz.com.br/img/logos/netshoes.png'
+  )
+
+ Company.create!(
+  name: 'Uber',
+  url: 'https://www.uber.com/br/en/',
+  logo: 'https://staticz.com.br/img/logos/cupom-uber.png'
+  )
+  
+Company.create!(
+  name: 'Mercado Livre',
+  url: 'https://www.mercadolivre.com.br/',
+  logo: 'https://staticz.com.br/img/logos/mercado-livre.png'
+  )
+
+Company.create!(
+  name: 'Renner',
+  url: 'https://www.lojasrenner.com.br/',
+  logo: 'https://staticz.com.br/img/logos/renner.png'
+  )
+
+Company.create!(
+  name: 'Adidas',
+  url: 'https://www.adidas.com.br/',
+  logo: 'https://staticz.com.br/img/logos/adidas.png'
+  )
+
+Company.create!(
+  name: 'C&A',
+  url: 'https://www.cea.com.br/',
+  logo: 'https://staticz.com.br/img/logos/cea.png'
+  )
+
+Company.create!(
+  name: 'Booking',
+  url: 'https://www.booking.com/',
+  logo: 'https://staticz.com.br/img/logos/booking.png'
+  )
+
+Company.create!(
+  name: 'Submarino',
+  url: 'https://www.submarino.com.br/',
+  logo: 'https://staticz.com.br/img/logos/submarino.png'
+  )
+
+Company.create!(
+  name: 'Zattini',
+  url: 'https://www.zattini.com.br/',
+  logo: 'https://staticz.com.br/img/logos/zattini.png'
+  )
+
+Company.create!(
+  name: 'Shopee',
+  url: 'https://shopee.com.br/',
+  logo: 'https://staticz.com.br/img/logos/shopee.png'
+  )
+
+Company.create!(
+  name: 'AliExpress',
+  url: 'https://best.aliexpress.com/',
+  logo: 'https://staticz.com.br/img/logos/aliexpress.png'
+  )
+
+Company.create!(
+  name: 'Amazon',
+  url: 'https://www.amazon.com.br/',
+  logo: 'https://staticz.com.br/img/logos/amazon.png'
+  )
+
+Company.create!(
+  name: 'Casas Bahia',
+  url: 'https://www.casasbahia.com.br/',
+  logo: 'https://staticz.com.br/img/logos/casas-bahia.png'
+  )
+
+Company.create!(
+  name: '99 Taxis',
+  url: 'https://99app.com/',
+  logo: 'https://staticz.com.br/img/logos/99taxis.png'
+  )
+
+Company.create!(
+  name: 'Centauro',
+  url: 'https://www.centauro.com.br/',
+  logo: 'https://staticz.com.br/img/logos/centauro.png'
+  )
+
+Company.create!(
+  name: 'Shein',
+  url: 'https://br.shein.com/',
+  logo: 'https://staticz.com.br/img/logos/sheinside.png'
+  )
+
+Company.create!(
+  name: 'Kabum',
+  url: 'https://www.kabum.com.br/',
+  logo: 'https://staticz.com.br/img/logos/KaBuM.png'
+  )
+
+Company.create!(
+  name: 'Natura',
+  url: 'https://www.natura.com.br/',
+  logo: 'https://staticz.com.br/img/logos/natura.png'
+  )
+
+Company.create!(
+  name: 'Ponto',
+  url: 'https://www.pontofrio.com.br/',
+  logo: 'https://staticz.com.br/img/logos/ponto.png'
   )
 
 Dropoff.create(

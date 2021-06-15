@@ -1,11 +1,11 @@
 <div class="container d-flex justify-content-center">
   <div class="col-10 ">
-    <div class="card-company mb-5" style = 'text-align: left;'>
+    <div class="card-company mb-5">
       <div class="form-leaf">
-        <h2 class="p-5"> Simule seus leafs <i class="fab fa-envira green"></i> </h2>
+        <h2 class="p-5"> Simule seus leafs <i class="fab fa-envira green text-center"></i> </h2>
 
 
-        <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form mx-5' }) do |f| %>
+        <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form mx-5', :style => 'text-align: left;' }) do |f| %>
           <%= f.input :vidro, label: 'Vidro', as: :integer %>
           <%= f.input :papel, label: 'Papel',as: :integer %>
           <%= f.input :plastico, label: 'Plástico', as: :integer%>
