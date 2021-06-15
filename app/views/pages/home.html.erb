@@ -43,7 +43,26 @@
 
     </div>
   </div>
+
+
+  <div class="geo">
+
+    <div id="geocoder" class="geo-div"> <h5>Encontre o ponto de coleta mais próximo de você:</h5>
+    </div>
+
+  </div>
+
+  <div style="background-color: #C5D7BD;">
+    <div
+      id="map"
+      style="width: 60%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+  </div>
+
 </div>
+
 
 
 
