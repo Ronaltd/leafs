@@ -37,7 +37,7 @@ class LeafsController < ApplicationController
       redirect_to @leaf, notice: 'Leaf atualizado com sucesso.'
     else
       render :show, notice: "Atualização não realizada."
-    end
+    end 
     
   end
 

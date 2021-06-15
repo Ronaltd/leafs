@@ -14,7 +14,8 @@ class BasketsController < ApplicationController
     if @basket.user.leafs_balance >= @basket.coupon.leafs_value
       @basket.debit = @basket.coupon.leafs_value
     else
-      render 'coupon/index', notice: 'Saldo insuficiente'
+      redirect_to coupons_path, notice: 'Saldo insuficiente'
+      return
     end
       
     if @basket.save
@@ -22,9 +23,9 @@ class BasketsController < ApplicationController
       @basket.user.update(leafs_balance: balance ) 
       redirect_to baskets_path, notice: 'Cupom adquirido com sucesso.'
     else
-      render 'coupon/index', notice: 'Operação não concluída. Tente novamente'
+      redirect_to coupons_path, notice: 'Operação não concluída. Tente novamente'
     end
-
+    
   end
 end
  
