@@ -1,4 +1,5 @@
 class LeafsController < ApplicationController
+  include LeafCalculator
   skip_before_action :authenticate_user!, only: [:new] 
 
   def index
@@ -21,7 +22,7 @@ class LeafsController < ApplicationController
       create_items(@leaf, params[:items])
       @leaf.update(credit:calculate_credit(@leaf))
       balance = @leaf.user.leafs_balance + @leaf.credit
-      @leaf.user.update(leafs_balance: balance ) 
+      @leaf.user.update(leafs_balance: balance )
       redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
     else
       render :new
@@ -34,10 +35,11 @@ class LeafsController < ApplicationController
     @dropoff = Dropoff.find(params[:leaf][:dropoff_id].to_i)
     
     if @leaf.update(dropoff: @dropoff, accepted: true)
+      calculate_leafs
       redirect_to @leaf, notice: 'Leaf atualizado com sucesso.'
     else
       render :show, notice: "Atualização não realizada."
-    end
+    end 
     
   end
 

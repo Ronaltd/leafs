@@ -1,4 +1,5 @@
 class BasketsController < ApplicationController
+  include LeafCalculator # herda do app controller, nao necessario aqui.
  
   def index
     @baskets = current_user.baskets
@@ -14,15 +15,20 @@ class BasketsController < ApplicationController
     if @basket.user.leafs_balance >= @basket.coupon.leafs_value
       @basket.debit = @basket.coupon.leafs_value
     else
-      render 'coupon/index', notice: 'Saldo insuficiente'
+      redirect_to coupons_path, notice: 'Saldo insuficiente'
+      return
     end
       
     if @basket.save
-      balance = @basket.user.leafs_balance - @basket.debit
-      @basket.user.update(leafs_balance: balance ) 
-      redirect_to baskets_path, notice: 'Cupom adquirido com sucesso.'
+      calculate_leafs
+      if @basket.debit
+        balance = @basket.user.leafs_balance - @basket.debit
+        @basket.user.update(leafs_balance: balance )
+        redirect_to baskets_path, notice: 'Cupom adquirido com sucesso.'
+      end
+
     else
-      render 'coupon/index', notice: 'Operação não concluída. Tente novamente'
+      redirect_to coupons_path, notice: 'Operação não concluída. Tente novamente'
     end
 
   end
