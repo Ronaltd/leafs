@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h1> bem-vindo!</h1> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
+      <h1>Bem-vindo!</h1> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
     </div>
   </div>
 <% else %>
@@ -28,7 +28,7 @@
       <div class=" col-lg-3  col-md-6 col-sm-6 mb-5">
         <div class="card-companies">
           <%= link_to company_path(company) do %>
-            <%= image_tag "#{company.logo}", size: "160x160" %>
+            <%= image_tag "#{company.logo}", size: "213x128", class: 'mb-2' %>
             <br>
             <%= link_to 'Cupons', company_path(company), class: 'button-green', target: "_blank" %>
           <% end %>

@@ -1,6 +1,6 @@
 const counter = document.getElementById('counter-rec'); // counter limit ruby
 const numChange = document.getElementById('number-change'); // text to be displayed counting
-const speed = 200;
+const speed = 2000;
 console.log()
 
 const formatNumber = new Intl.NumberFormat('pt-BR')
