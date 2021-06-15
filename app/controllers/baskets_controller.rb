@@ -16,6 +16,7 @@ class BasketsController < ApplicationController
       @basket.debit = @basket.coupon.leafs_value
     else
       redirect_to coupons_path, notice: 'Saldo insuficiente'
+      return
     end
       
     if @basket.save

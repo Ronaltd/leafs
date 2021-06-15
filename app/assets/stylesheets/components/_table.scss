@@ -29,6 +29,9 @@
   
 .content-table tr{
     transition: 0.5s;
+  .img-table{
+    transition: 0.5s;
+  }
   i {
     transition: 0.5s;
   }
@@ -37,10 +40,17 @@
 .content-table tr:hover{
   color: #1b1b1b;
   background: rgb(243, 243, 243);
+  .img-table{
+    transform: scale(1.1);
+  }
   i {
     transform: rotate(90deg);
   }
 }
+
+// .content-table .img-table{
+  
+// }
 
 
 

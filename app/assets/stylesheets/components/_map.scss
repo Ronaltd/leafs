@@ -1,13 +1,13 @@
-.mapboxgl-popup {
-  max-width: 200px;
+// .mapboxgl-popup {
+//   max-width: 200px;
 
-}
+// }
 
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+// .mapboxgl-popup-content {
+//   text-align: center;
+//   font-family: 'Open Sans', sans-serif;
 
-}
+// }
 
 /*------------------------search map ------------------*/
 
@@ -23,7 +23,6 @@
   margin-left:39px;
   margin-bottom: 20px;
   }
-
 }
 
 /*----------------------------------------------------*/
@@ -34,20 +33,8 @@
 
 
 .geo{
-  position:relative;
   margin-top: 100px;
+  position:relative;
 }
 
-
-
-.map-overlay {
-  width: 30.5%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  background-color: #efefef;
-  max-height: 100%;
-  overflow: hidden;
-}
 

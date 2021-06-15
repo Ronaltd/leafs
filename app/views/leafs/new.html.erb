@@ -2,25 +2,25 @@
   <div class="col-10 ">
     <div class="card-company mt-5 mb-5">
       <div class="form-leaf">
-        <h2 class="p-5" style="font-family: 'Roboto', sans-serif; text-emphasis: center;"> Simule seus leafs <i class="fab fa-envira green"></i> </h2>
+        <h2 class="p-5"> Simule seus leafs <i class="fab fa-envira green"></i> </h2>
 
 
         <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form', style:'text-align: left;' }) do |f| %>
-          <%= f.input :vidro, label: 'Vidro', as: :integer %>
-          <%= f.input :papel, label: 'Papel',as: :integer %>
-          <%= f.input :plastico, label: 'Plástico', as: :integer%>
-          <%= f.input :metal, label: 'Metal',as: :integer %>
+          <%= f.input :vidro, label: 'Vidro', as: :integer, placeholder: 'Informe a quantidade em kg' %> %>
+          <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
+          <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
           <%= f.submit class: 'button-green', style: 'width: 100%' %>
         <% end %>
 
         <div class="table-leafs mt-5 p-4">
-          <h4 class="mb-4" style="font-family: 'Roboto', sans-serif;">Tabela de Conversão</h4>
+          <h4 class="mb-4">Tabela de Conversão</h4>
 
           <div class="row">
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #1eae98;">
                 <div class="card-body">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Vidro (und)</h6>
+                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Vidro (Kg)</h6>
                   <p class="card-text leaf-qtdd"> <i class="fab fa-envira green"></i> 1 </p>
                 </div>
               </div>

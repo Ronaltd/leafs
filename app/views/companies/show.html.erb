@@ -12,8 +12,8 @@
         <% @coupons.each do |coupon| %>
         <tbody>
           <tr>
-            <td><span class="mb-5"><%= coupon.discount %></span></td>
-            <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><i class="fas fa-ticket-alt"></i><span class="ml-4 mb-5"><%= coupon.discount %></span></td>
+            <td><%= link_to "Adquirir", coupon_baskets_path(coupon.id), method: :create, data:{confirm: "Tem certeza? Valor: #{coupon.leafs_value} leafs"}, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>
