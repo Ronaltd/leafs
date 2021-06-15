@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :baskets, only: [:index]
   
-  resources :dropoffs, only: [:index]
+  # resources :dropoffs, only: [:index]
 
   resources :leafs, only: [:index, :show, :new, :create, :update]
     
