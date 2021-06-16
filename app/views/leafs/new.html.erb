@@ -6,10 +6,10 @@
 
 
         <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form mx-5', :style => 'text-align: left;' }) do |f| %>
-          <%= f.input :vidro, label: 'Vidro', as: :integer %>
-          <%= f.input :papel, label: 'Papel',as: :integer %>
-          <%= f.input :plastico, label: 'Plástico', as: :integer%>
-          <%= f.input :metal, label: 'Metal',as: :integer %>
+          <%= f.input :vidro, label: 'Vidro', as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
+          <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
           <%= f.submit class: 'button-green', style: 'width: 100%'%>
         <% end %>
 

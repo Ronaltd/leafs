@@ -12,7 +12,6 @@ puts 'Cleaning database'
 Company.destroy_all
 
 
-
 admin=User.create!({ username: 'AdminUser', first_name: "Admin", last_name: "User", email: 'admin@leafs.com', password: 'password', password_confirmation: 'password'})
 
 admin.toggle!(:admin)
@@ -27,6 +26,15 @@ elsif admin.errors.any?
 else
   puts "****NOT VALID****"
 end
+
+
+User.create!(
+  username: "Admin",
+  first_name: "Administrador",
+  last_name: "Leafs",
+  email: "admin@teste.com",
+  password:  "abc123"
+)
 
 
 Company.create!(
@@ -175,50 +183,50 @@ Company.create!(
   )
 
 Dropoff.create(
-  name: 'Dropp off 1',
+  name: 'Pão de Açucar - Portal do Morumbi',
   address: 'R. Mal. Hastimphilo de Moura, 30, São Paulo - SP, 05641-000',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 2 - G Barbosa',
+  name: 'G Barbosa',
   address: 'R. Luiz Chagas, 55, Aracaju - SE, 49037-430',
   opening_hours: '24h'
   )
 
 Dropoff.create(
 
-  name: 'Dropp off 3 - Pão de aúcar',
-  address: 'R. José Seabra Batista,Jardins, Aracaju - SE, 49025-750',
+  name: 'Pão de Açúcar - Aracajú',
+  address: 'R. José Seabra Batista, Jardins, Aracaju - SE, 49025-750',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 4 - Extra',
+  name: 'Extra - Aracajú',
   address: 'Av. Adélia Franco, 3735 - Grageru, Aracaju - SE, 49025-620',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 5- Bompreço',
+  name: 'Bompreço - Aracajú',
   address: 'Av. Pedro Valadares, 780 - Jardins, Aracaju - SE, 49025-090',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropoff 6 - Shopping Jardins',
+  name: 'Shopping Jardins - Aracajú',
   address: 'Avenida Ministro Geraldo Barreto Sobra, 215 - Jardins, Aracaju - SE, 49026-010',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropoff 7 - Mcdolnads',
+  name: 'McDonalds - Suissa',
   address: 'Av. Hermes Fontes, 1118 - Suissa, Aracaju - SE, 49050-000',
   opening_hours: '24h'
   )
 
 Dropoff.create(
-  name: 'Dropp off 7',
+  name: 'Hirota - Portal',
   address: 'Av. Dr. Guilherme Dumont Vilares, 1450 - Jardim Londrina, São Paulo - SP, 05640-003',
   opening_hours: '24h'
   )
@@ -276,7 +284,7 @@ Dropoff.create(
   )
 
 Dropoff.create(
-  name: ' Supermercados BH ',
+  name: ' Supermercados BH - Caete ',
   address: ' Av. Dr. João Pinheiro, 4660 - MORGAN, Caeté - MG, 34800-000',
   opening_hours: '24h'
   )
@@ -288,37 +296,31 @@ Dropoff.create(
   )
 
 Dropoff.create(
-  name: ' Mercado Municipal de Caete ',
-  address: ' R. Pres. Kenedy, Caeté - MG, 34800-000',
-  opening_hours: '24h'
-)
-
-Dropoff.create(
-  name: 'Supermercados BH',
+  name: 'Supermercados BH - Centro',
   address: 'Av. Paraná, 470 - Centro, Belo Horizonte - MG, 30120-020',
   opening_hours: '24h'
 )
 
 Dropoff.create(
-  name: ' Supermercados BH ',
+  name: ' Supermercados BH - Palmeiras',
   address: ' R. Júlio de Castilho, 1070 - Palmeiras, Belo Horizonte - MG, 30570-080',
   opening_hours: '24h'
 )
 
 Dropoff.create(
-  name: ' Supermercados BH ',
+  name: ' Supermercados BH - Vila Suzana ',
   address: ' Av. Cristiano Machado, 5555 - Vila Suzana, Belo Horizonte - MG, 30331-970',
   opening_hours: '24h'
 )
 
 Dropoff.create(
-  name: ' Supermercados BH ',
+  name: ' Supermercados BH - Barreiro',
   address: ' Av. Afonso Vaz de Melo, 465 - Barreiro, Belo Horizonte - MG, 30640-070',
   opening_hours: '24h'
 )
 
 Dropoff.create(
-  name: ' DIA Supermercados ',
+  name: ' DIA Supermercados - Belo Horizonte ',
   address: ' R. da Bahia, 450 - Centro, Belo Horizonte - MG, 30160-010',
   opening_hours: '24h'
 )
@@ -354,7 +356,7 @@ Dropoff.create(
 )
 
 Dropoff.create(
-  name: ' Supermercados Campeão',
+  name: ' Supermercados Campeão - Botafogo',
   address: ' R. Gen. Polidoro, 74 - Botafogo, Rio de Janeiro - RJ, 22280-005',
   opening_hours: '24h'
 )
@@ -366,13 +368,13 @@ Dropoff.create(
 )
 
 Dropoff.create(
-  name: ' Gonzaga Hipermercado',
+  name: ' Gonzaga Hipermercado - Aracajú',
   address: ' R. Castro Alves, 618 - Ponto Novo, Aracaju - SE, 49047-090',
   opening_hours: '24h'
 )
 
 Dropoff.create(
-  name: ' Supermercado Compre Bem',
+  name: ' Supermercado Compre Bem Aracajú',
   address: ' Av. Prof. José Freitas de Andrade, 3173 - Coroa do Meio, Aracaju - SE, 49035-680',
   opening_hours: '24h'
 )
@@ -460,6 +462,93 @@ Dropoff.create(
   address: ' Av. Sumaré, 721 - Perdizes, São Paulo - SP, 05016-090',
   opening_hours: '24h'
 )
-   
+
+Coupon.create(
+  company_id: 10,
+  discount: ' ❤ Cupom adidas 15% OFF',
+  code: ' LEAFS25JUN21',
+  leafs_value: 25
+  )
+
+Coupon.create(
+  company_id: 10,
+  discount: 'Outlet adidas: até 75% de desconto + frete grátis',
+  code: ' ADIDAS75',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 10,
+  discount: ' Outlet tênis adidas: economize 50%',
+  code: ' LEAFSADIDAS50',
+  leafs_value: 50
+  )
+
+Coupon.create(
+  company_id: 4,
+  discount: ' Código Dell de R$200 de desconto',
+  code: ' LEAFS200',
+  leafs_value: 50
+  )
+
+Coupon.create(
+  company_id: 3,
+  discount: ' Cupom de desconto Privalia 20% OFF',
+  code: ' LEAFS20',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 6,
+  discount: ' Cupom Netshoes com 15% OFF em vestuário training',
+  code: ' TRAINING',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 6,
+  discount: 'Ganhe 25% OFF nos itens TOPNetshoes ',
+  code: ' TOPROUPAS',
+  leafs_value: 20
+  )
+
+  Coupon.create(
+  company_id: 6,
+  discount: 'Cupom Netshoes todos os tênis com 20% OFF',
+  code: 'SUPERTENIS',
+  leafs_value: 20
+  )
+
+  Coupon.create(
+  company_id: 11,
+  discount: ' Economize 15% com cupom C&A em suas compras',
+  code: ' 15OFF',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 11,
+  discount: ' Cupom de Desconto C&A com 10% OFF',
+  code: ' BEMVINDO10 ',
+  leafs_value: 10
+  )
+
+Coupon.create(
+  company_id: 18,
+  discount: ' Use o cupom Casas Bahia com até 20% OFF',
+  code: ' VCMERECE',
+  leafs_value: 20
+  )
+
+Coupon.create(
+  company_id: 18,
+  discount: ' Cupom Casas Bahia de R$ 300 de desconto em celulares',
+  code: ' LEAFS300 ',
+  leafs_value: 100
+  )
+
+
+
+
   
 puts 'all set'
