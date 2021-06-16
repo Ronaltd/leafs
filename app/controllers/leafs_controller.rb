@@ -3,9 +3,14 @@ class LeafsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new] 
 
   def index
-    @baskets = Basket.where(user: current_user)
-    @leafs = Leaf.where(user: current_user)
-    @balance = @baskets | @leafs
+    @baskets = current_user.baskets
+    @leafs = current_user.leafs.where(accepted: true)
+    @balance = (@baskets + @leafs).sort_by { |balance| balance.created_at}
+    
+    @leafs_pendent = current_user.leafs.where(accepted: false)
+    @leaf_pendent_total = 0
+    @leafs_pendent.each { |leaf_pendent| @leaf_pendent_total += leaf_pendent.credit }
+  
   end
   
   def show
