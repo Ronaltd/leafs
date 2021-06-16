@@ -8,7 +8,7 @@ class DropoffsController < ApplicationController
       {
         lat: dropoff.latitude,
         lng: dropoff.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { dropoff: dropoff }),
+        info_window: render_to_string(partial: "info_window_drop", locals: { dropoff: dropoff }),
         image_url: helpers.asset_url('Map_icon.png')
       }
     end
