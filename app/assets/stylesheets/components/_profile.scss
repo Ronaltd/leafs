@@ -8,19 +8,25 @@
 .profile-column a{
   font-size: 18px;
   text-decoration: none;
-  color: rgba($color: #000000, $alpha: 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-family: 'EB Garamond', serif;
+  transition: 0.1s;
+}
+
+.profile-column a:hover{
+  color: rgba(255, 255, 255, 0.9);
+
 }
 
 .profile-column p{
   font-size: 18px;
   text-decoration: none;
-  color: rgba($color: #000000, $alpha: 0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-family: 'EB Garamond', serif;
 }
 
 .profile-column i{
-  color: #2C8109;
+  color: #7CBF17;
 }
 
 .user-balance p{
