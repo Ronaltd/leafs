@@ -57,7 +57,7 @@
             <% if item.instance_of?(Leaf) %>
               <tr>
                 <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
-                <td class='success'> <%= item.dropoff.name %> </td>
+                <td class='success'> <%#= item.dropoff.name %> </td>
                 <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
               </tr>
             <% else %>
@@ -91,12 +91,12 @@
 
   <% @leafs.each do |leaf| %>
 
-  <div>
-    <%= link_to leaf_path(leaf.id) do %>
-      <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
-    <% end %>
-  </div>
-
+    <div>
+      <%= link_to leaf_path(leaf.id) do %>
+        <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
+      <% end %>
+    </div>
+  <% end %>
 
   <% @leafs_pendent.each do |leaf| %>
       <div>

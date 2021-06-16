@@ -1,0 +1,3 @@
+<% @leafs.each do |leaf| %>
+  <%= link_to "#{leaf.credit} créditos de #{leaf.user.first_name}", admin_leaf_path(leaf), method: 'PATCH' %>
+<%end%>

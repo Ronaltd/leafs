@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin_leafs/index'
   devise_for :users
   root to: 'pages#home'
   # get '/companies', to: 'pages#companies_index', as: :companies
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   resources :dropoffs, only: [:index]
 
   resources :leafs, only: [:index, :show, :new, :create, :update]
+
+  resources :admin_leafs, only: [:index, :update]
     
 
 
