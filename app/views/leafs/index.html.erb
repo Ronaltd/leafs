@@ -8,7 +8,7 @@
 <!--Restante do Profile-->
 <div class='container p-3'>
   <!--Saldo-->
-  <div class="d-flex justify-content-start  mt-4">
+  <div class="d-flex justify-content-start mt-4">
     <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3">
       <div class='row align-items-center'>
         <div class="profile-image col-md-auto pl-3">
@@ -28,14 +28,13 @@
         </div>
         <!--Valor do Saldo-->
         <div class="profile-column col-md-auto">
-          <h4 class='text-right mb-0'> Saldo: <i class="fab fa-envira green"></i> <%= current_user.leafs_balance %></h4>
-          <p class='mb-0 pt-2'> <a href="#"> Pendente de Aprovação </a> </p>
+          <h4 class='text-right mb-0'> Saldo <i class="fab fa-envira"></i> <%= current_user.leafs_balance %></h4>
+          <p class='mb-0 pt-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
         </div>
         <div class=col-md-auto>
           <div class='btn btn-success'> <%= link_to "Novo Leaf", new_leaf_path %> </div>
         </div>
       </div>
-        <!--Inserir aqui If e Else para fazer a conta do saldo-->
     </div>
   </div>
 
@@ -53,28 +52,35 @@
           </tr>
         </thead>
         <tbody class="profile-body-table">
-            <% @balance.sort_by { |element| element.created_at }.each do |item| %>
-              <% if item.instance_of?(Leaf) %>
-                <tr>
-                  <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td> 
-                  <td class='success'> <%= item.dropoff.name %> </td> 
-                  <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
-                </tr>
-              <% else %>
-                <tr>
-                  <td class='danger'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
-                  <td class='danger'> <%= item.coupon.company.name %> - <%= item.coupon.discount %> </td>
-                  <td class='danger'> - <i class="fab fa-envira"></i> <%= item.debit %></td>
-                </tr>
-              <% end %>
+          <% @balance.each do |item| %>
+            <% if item.instance_of?(Leaf) %>
+              <tr>
+                <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
+                <td class='success'> <%= item.dropoff.name %> </td> 
+                <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
+              </tr>
+            <% else %>
+              <tr>
+                <td class='danger'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
+                <td class='danger'> <%= item.coupon.company.name %> - <%= item.coupon.discount %> </td>
+                <td class='danger'> - <i class="fab fa-envira"></i> <%= item.debit %></td>
+              </tr>
             <% end %>
+          <% end %>
         </tbody>
       </table>
       
     </div>
 
     <div class="user-balance col-10 col-md-6 col-lg-5 shadow bg-white p-4 mb-2 rounded ">
-          
+      <div class="list-links">
+        <h4> </h4>
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Meus Leafs Pendentes</p>
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Cupons Adquiridos</p>
+        
+        <p class="link-text"> <i class="fas fa-caret-right"></i> Impacto Ambiental</p>
+
+      </div>     
 
     </div>
   </div>
@@ -83,22 +89,20 @@
 
 
   <% @leafs.each do |leaf| %>
-    <% if leaf.user == current_user && leaf.accepted == true%>
       <div>
         <%= link_to leaf_path(leaf.id) do %>
           <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
         <% end %>
       </div>
-    <%end%>
   <%end%>
-  <% @leafs.each do |leaf| %>
-    <% if leaf.user == current_user && leaf.accepted == false%>
+
+
+  <% @leafs_pendent.each do |leaf| %>
       <div>
         <%= link_to leaf_path(leaf.id) do %>
           <p>Leafs calculados - pendente: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
         <% end %>
       </div>
-    <%end%>
   <%end%>
 
   <div>
