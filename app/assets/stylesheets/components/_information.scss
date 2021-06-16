@@ -8,26 +8,28 @@
   padding-top: 50px;
   font-weight: bold;
   font-family: 'Roboto Slab', serif;
+  margin-bottom: 30px;
  }
 
 .information p{
   text-align: justify;
   text-decoration: none;
-  font-size: 16px;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Roboto Slab', serif;
 }
 
 .info-space{
   display:flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   padding: 10px 150px;
 }
 
 .img-info{
   margin-bottom: 15px;
+  padding-top: 5px;
   transition: 0.5s;
   height: 100px
 }
@@ -35,10 +37,12 @@
 .info {
   transition: 0.5s;
   border-radius: 15px;
+  width: 33%
 }
 
 .info:hover{
   background: rgb(235, 235, 235);
+  padding-top: 5px;
   img{
     transform: translatey(-6px);
     transform: scale(1.1);
