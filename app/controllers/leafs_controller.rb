@@ -10,7 +10,12 @@ class LeafsController < ApplicationController
     @leafs_pendent = current_user.leafs.where(accepted: false)
     @leaf_pendent_total = 0
     @leafs_pendent.each { |leaf_pendent| @leaf_pendent_total += leaf_pendent.credit }
-  
+    @total_user = 0
+    @leafs.each do |leaf|
+      leaf.items.each do |item|
+        @total_user += item.amount
+      end
+    end
   end
   
   def show
