@@ -11,14 +11,6 @@ puts 'Cleaning database'
 
 Company.destroy_all
 
-User.create!(
-  username: "Admin"
-  first_name: "Administrador"
-  last_name: "Leafs"
-  email: "admin@teste.com"
-  password:  "abc123"
-)
-
 Company.create!(
   name: 'Magalu',
   url: 'https://clube.magazineluiza.com.br/',
