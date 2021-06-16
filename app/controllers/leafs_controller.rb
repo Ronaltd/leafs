@@ -21,12 +21,12 @@ class LeafsController < ApplicationController
       if @leaf.save
         create_items(@leaf, params[:items])
         @leaf.update(credit:calculate_credit(@leaf))
-        redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
+        redirect_to @leaf, notice: 'Seus leafs serão creditados em sua conta em até 48hrs após confirmação de entrega. Obrigado!'
       else
         render :new
       end
     else
-      flash[:notice] = 'Quantidade inválida'
+      flash[:notice] = 'Oops, quantidade insuficiente!'
       render :new
     end
   end

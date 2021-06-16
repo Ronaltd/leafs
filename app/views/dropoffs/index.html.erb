@@ -1,18 +1,18 @@
-   <div class="container">
-   <div class="map-overlay">
-    <fieldset>
-      <input id="feature-filter" type="text" placeholder="Filter results by name">
-    </fieldset>
-    <div id="feature-listing" class="listing"></div>
-  </div> %>
-  <div class="geo">
-    <div id="geocoder" class="geocoder"></div>
-    <div
-      id="map"
-      style="width: 100%; height: 750px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-  </div>
+<div class="container">
+  <div class="geo" style="margin-top: 75px;">
+    <div style="width:50%; margin: 20px 0 0 500px; position: absolute;">
+      <div id="geocoder" class="geocoder"></div>
+    </div>
 
- </div>
+    <div>
+      <div
+        id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
+
+
+   </div>
+</div>
