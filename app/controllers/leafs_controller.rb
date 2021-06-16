@@ -6,6 +6,7 @@ class LeafsController < ApplicationController
     @baskets = Basket.where(user: current_user)
     @leafs = Leaf.where(user: current_user)
     @balance = @baskets | @leafs
+  
   end
   
   def show
