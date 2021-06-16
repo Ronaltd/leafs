@@ -12,6 +12,7 @@ puts 'Cleaning database'
 Company.destroy_all
 
 
+
 admin=User.create!({ username: 'AdminUser', first_name: "Admin", last_name: "User", email: 'admin@leafs.com', password: 'password', password_confirmation: 'password'})
 
 admin.toggle!(:admin)

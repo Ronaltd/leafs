@@ -8,8 +8,8 @@
 <!--Restante do Profile-->
 <div class='container p-3'>
   <!--Saldo-->
-  <div class="d-flex justify-content-start mt-4">
-    <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3">
+  <div class="d-flex justify-content-start mt-3">
+    <div class="col-12 col-md-12 col-lg-12 shadow p-4 mb-2 rounded mr-3" style="background-image: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B);">
       <div class='row align-items-center'>
         <div class="profile-image col-md-auto pl-3">
           <% if current_user.photo.attached? %>
@@ -20,19 +20,19 @@
         </div>
         <!--Foto Profile-->
         <div class="profile-column col p-0">
-          <h4 class='mb-0'><%= current_user.first_name %> <%= current_user.last_name %></h4>
+          <h4 class='mb-0 text-white'><%= current_user.first_name %> <%= current_user.last_name %></h4>
           <div class='d-flex justify-content-start align-items-between'>
-            <p class='mb-0 pt-2 pr-2'> <a href="#"> Gerenciar Conta </a></p>
-            <p class='mb-0 pt-2 pl-2'> <a href="#"> Sair </a></p>
+            <a href="#" class='mb-0 pt-2 pr-2 '> Gerenciar conta </a>
+            <a href="#" class='mb-0 pt-2 pl-2 '> Sair </a>
           </div>
         </div>
         <!--Valor do Saldo-->
         <div class="profile-column col-md-auto">
-          <h4 class='text-right mb-0'> Saldo <i class="fab fa-envira"></i> <%= current_user.leafs_balance %></h4>
-          <p class='mb-0 pt-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
+          <h4 class='text-right  mb-0 text-white'>Saldo:<i class="fab fa-envira ml-3 mr-1"></i><%= current_user.leafs_balance %></h4>
+          <p class='mb-0 pt-2'> Aprovação pendente: <i class="fab fa-envira ml-2"></i> <%= @leaf_pendent_total %></p>
         </div>
         <div class=col-md-auto>
-          <div class='btn btn-success'> <%= link_to "Novo Leaf", new_leaf_path %> </div>
+          <div> <%= link_to "Novo Leaf", new_leaf_path, class: 'button-green mr-2' %> </div>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
 
   <div class='row p-3'>
     <div class=" col-10 col-md-6 col-lg-7 shadow bg-white p-4 mb-2 rounded ">
-      <h4> Extrato da Conta</h4>
+      <h4 class="mb-3"> Extrato da Conta</h4>
 
       <table class="profile-table">
         <thead class="profile-head-table">
@@ -65,8 +65,9 @@
                 <td class='danger'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
                 <td class='danger'> <%= item.coupon.company.name %> - <%= item.coupon.discount %> </td>
                 <td class='danger'> - <i class="fab fa-envira"></i> <%= item.debit %></td>
-              </tr>
+              <hr>
             <% end %>
+
           <% end %>
         </tbody>
       </table>
