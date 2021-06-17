@@ -1,14 +1,20 @@
 <% if user_signed_in? %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h2 style="font-size: 40px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;">Bem-vindo!</h2> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
+      <h2 style="font-size: 35px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;"> 
+      Bem-Vindo!
+      </h2>
+      <p style="font-weight: bold"> Preservar o meio ambiente é agir no presente para proteger o futuro. Já reciclou o seu lixo hoje?</p>
     </div>
   </div>
 <% else %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h2>Faça parte dessa mudança</h2>
-      <a class="button-orange" href="#">Cadastre-se</a>
+      <h2 style="font-size: 40px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white; line-heigth: 1.6;"> Faça parte dessa mudança!
+      </h2>
+        <p style="font-weight: bold"> A preservação do meio ambiente começa com pequenas atitudes diárias! </p>
+      <br>
+      <%= link_to 'Cadastre-se', new_user_registration_path, class: 'button-orange' %>
     </div>
   </div>
 <% end %>
