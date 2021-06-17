@@ -1,7 +1,7 @@
 <!--BANNER DA PÁGINA DO USUÁRIO-->
 <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
   <div class="container text-center mt-5">
-    <h3>Você contribuiu reciclando ____ KG de lixo com a Leafs!! </h3>
+    <h3 style="color:white;">Você contribuiu reciclando <%= @total_user %> KG de lixo com a Leafs!! </h3>
   </div>
 </div>
 
@@ -16,7 +16,7 @@
             <%= cl_image_tag current_user.photo.key, height: 120, width: 120, crop: :thumb, class:"rounded-circle" %>
           <% else %>
             <%= image_tag "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg", class: "rounded-circle", size: '100x100' %>
-          <% end %>        
+          <% end %>
         </div>
         <!--Foto Profile-->
         <div class="profile-column col p-0">
@@ -57,7 +57,7 @@
             <% if item.instance_of?(Leaf) %>
               <tr>
                 <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
-                <td class='success'> <%= item.dropoff.name %> </td> 
+                <td class='success'> <%= item.dropoff.name if item.dropoff%> </td>
                 <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
               </tr>
             <% else %>

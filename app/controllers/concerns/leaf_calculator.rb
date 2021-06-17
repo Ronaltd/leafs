@@ -1,11 +1,11 @@
 module LeafCalculator
   extend ActiveSupport::Concern
 
-  def calculate_leafs
+  def calculate_leafs(user=nil)
 
-    if current_user
-      unless current_user.leafs.empty?
-        leafs = current_user.leafs.where(accepted: true).reduce(0) do |result, leaf|
+    if user
+      unless user.leafs.empty?
+        leafs =user.leafs.where(accepted: true).reduce(0) do |result, leaf|
           next if leaf.credit.nil?
 
           leaf.credit + result
@@ -15,8 +15,8 @@ module LeafCalculator
         leafs = 0
       end
 
-      unless current_user.baskets.empty?
-        baskets = current_user.baskets.reduce(0) do |result, basket|
+      unless user.baskets.empty?
+        baskets = user.baskets.reduce(0) do |result, basket|
           next if basket.debit.nil?
 
           basket.debit + result
@@ -26,9 +26,9 @@ module LeafCalculator
         baskets = 0
       end
 
-      session[:user_leaf] = leafs - baskets #calculo apenas quando o usuario loga, quando um leaf é aceito e quando cupom foi usado
-    else
-    session[:user_leaf] = 0
+      balance = leafs - baskets #calculo apenas quando o usuario loga, quando um leaf é aceito e quando cupom foi usado
+      user.update(leafs_balance: balance)
+
     end
   end
 end

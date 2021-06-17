@@ -10,7 +10,12 @@ class LeafsController < ApplicationController
     @leafs_pendent = current_user.leafs.where(accepted: false)
     @leaf_pendent_total = 0
     @leafs_pendent.each { |leaf_pendent| @leaf_pendent_total += leaf_pendent.credit }
-  
+    @total_user = 0
+    @leafs.each do |leaf|
+      leaf.items.each do |item|
+        @total_user += item.amount
+      end
+    end
   end
   
   def show
@@ -18,10 +23,13 @@ class LeafsController < ApplicationController
   end
   
   def new
+
   end   
 
   def create
+    @dropoff = Dropoff.find(params[:items][:dropoff])
     @leaf = Leaf.new(user: current_user, credit: 0, accepted: false)
+    @leaf.dropoff = @dropoff
     if validate_items(params)
       if @leaf.save
         create_items(@leaf, params[:items])
@@ -41,14 +49,14 @@ class LeafsController < ApplicationController
     @leaf = Leaf.find(params[:id])
     @dropoff = Dropoff.find(params[:leaf][:dropoff_id].to_i)
     
-    if @leaf.update(dropoff: @dropoff, accepted: true)
-      calculate_leafs
-      balance = @leaf.user.leafs_balance + @leaf.credit
-      @leaf.user.update(leafs_balance: balance)
-      redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
+    if @leaf.update(dropoff: @dropoff)
+      # calculate_leafs
+      # balance = @leaf.user.leafs_balance + @leaf.credit
+      # @leaf.user.update(leafs_balance: balance)
+      redirect_to @leaf, notice: 'Leaf aguardando aprovação.'
     else
       render :show, notice: "Atualização não realizada."
-    end 
+    end
     
   end
 

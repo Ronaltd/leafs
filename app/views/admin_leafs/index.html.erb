@@ -1,0 +1,9 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-10 ">
+    <div class="card-company mt-10 mb-5">
+      <% @leafs.each do |leaf| %>
+        <%= link_to "#{leaf.credit} créditos de #{leaf.user.first_name}", admin_leaf_path(leaf), method: 'PATCH' %><br>
+      <%end%>
+    </div>
+  </div>
+</div>

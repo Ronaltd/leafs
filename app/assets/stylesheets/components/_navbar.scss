@@ -1,3 +1,12 @@
+body {
+  padding-top: 70px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
 .navbar-lewagon {
   box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
   justify-content: space-between;

@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  include LeafCalculator
+  # include LeafCalculator
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :calculate_leafs, if: :devise_controller?
-  before_action :fetch_leafs
+  # before_action :calculate_leafs, if: :devise_controller?
+  # before_action :fetch_leafs
   # helper_method :leafs
 
   # def leafs
@@ -27,9 +27,9 @@ class ApplicationController < ActionController::Base
   #   session[:user_leaf] = leafs - baskets
   # end
 
-  def fetch_leafs
-    @user_leafs = session[:user_leaf] if session[:user_leaf]
-  end
+  # def fetch_leafs
+  #   @user_balance = session[:user_balance] if session[:user_balance]
+  # end
 
   protected
 
