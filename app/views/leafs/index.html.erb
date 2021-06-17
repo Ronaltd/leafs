@@ -8,8 +8,8 @@
 <!--Restante do Profile-->
 <div class='container p-3'>
   <!--Saldo-->
-  <div class="d-flex justify-content-start mt-3">
-    <div class="col-12 col-md-12 col-lg-12 shadow p-4 mb-2 rounded mr-3" style="background-image: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B);">
+  <div class="d-flex justify-content-start mt-4">
+    <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3" style="background-image: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B);">
       <div class='row align-items-center'>
         <div class="profile-image col-md-auto pl-3">
           <% if current_user.photo.attached? %>
@@ -20,19 +20,19 @@
         </div>
         <!--Foto Profile-->
         <div class="profile-column col p-0">
-          <h4 class='mb-0 text-white'><%= current_user.first_name %> <%= current_user.last_name %></h4>
+          <h2 class='mb-0'><%= current_user.first_name %> <%= current_user.last_name %></h2>
           <div class='d-flex justify-content-start align-items-between'>
-            <a href="#" class='mb-0 pt-2 pr-2 '> Gerenciar conta </a>
-            <a href="#" class='mb-0 pt-2 pl-2 '> Sair </a>
+            <p class='mb-0 pt-2 pr-2'> <a href="#"> Gerenciar Conta </a></p>
+            <p class='mb-0 pt-2 pl-2'> <a href="#"> Sair </a></p>
           </div>
         </div>
         <!--Valor do Saldo-->
         <div class="profile-column col-md-auto">
-          <h4 class='text-right  mb-0 text-white'>Saldo:<i class="fab fa-envira ml-3 mr-1"></i><%= current_user.leafs_balance %></h4>
-          <p class='mb-0 pt-2'> Aprovação pendente: <i class="fab fa-envira ml-2"></i> <%= @leaf_pendent_total %></p>
+          <h2 class='text-right mb-0'> Saldo <i class="fab fa-envira"></i> <%= current_user.leafs_balance %></h2>
+          <p class='mb-0 pt-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
         </div>
         <div class=col-md-auto>
-          <div> <%= link_to "Novo Leaf", new_leaf_path, class: 'button-green mr-2' %> </div>
+          <div class='btn btn-success'> <%= link_to "Solicitação LEAFS", new_leaf_path %> </div>
         </div>
       </div>
     </div>
@@ -41,10 +41,10 @@
     <!--Extrato-->
 
   <div class='row p-3'>
-    <div class=" col-10 col-md-6 col-lg-7 shadow bg-white p-4 mb-2 rounded ">
-      <h4 class="mb-3"> Extrato da Conta</h4>
+    <div class="extrato-profile col-10 col-md-6 col-lg-7 shadow bg-white p-4 mb-2 rounded ">
+      <h4> Extrato da Conta</h4>
 
-      <table class="profile-table">
+      <table class="table table-hover">
         <thead class="profile-head-table">
           <tr class='align-items-center'>
             <th scope="col" class="col-3">Data</th>
@@ -65,57 +65,69 @@
                 <td class='danger'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
                 <td class='danger'> <%= item.coupon.company.name %> - <%= item.coupon.discount %> </td>
                 <td class='danger'> - <i class="fab fa-envira"></i> <%= item.debit %></td>
-              <hr>
+              </tr>
             <% end %>
-
           <% end %>
         </tbody>
       </table>
-
     </div>
 
-    <div class="user-balance col-10 col-md-6 col-lg-5 shadow bg-white p-4 mb-2 rounded ">
+    <!--Informação LEAFS pendentes-->
+    <div class="user-informations col-10 col-md-6 col-lg-5 shadow bg-white p-4 mb-2 rounded ">
       <div class="list-links">
         <h4> </h4>
-        <p class="link-text"> <i class="fas fa-caret-right"></i> Meus Leafs Pendentes</p>
-        <p class="link-text"> <i class="fas fa-caret-right"></i> Cupons Adquiridos</p>
+        
+        <!--COLLAPSE UM-->
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="fas fa-caret-right"></i> Meus Leafs Pendentes
+                </button>
+              </h2>
+            </div>
 
-        <p class="link-text"> <i class="fas fa-caret-right"></i> Impacto Ambiental</p>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <% @leafs.each do |leaf| %>
+                  <div>
+                    <%= link_to leaf_path(leaf.id) do %>
+                      <p style="font-size: 14px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Solicitação LEAFS: Data - <%= leaf.created_at.strftime('%d/%m/%Y')%> no valor <%= leaf.credit %> LEAFS </p>
+                    <% end %>
+                  </div>
+                <%end%>
+              </div>
+           </div>
+          </div>
 
-      </div>
+          <!--COLLAPSE  TWO-->
 
+          <div class="card">
+            <div class="card-header" style="background-color: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B)" id="headingTwo">
+              <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="fas fa-caret-right"></i> Cupons Adquiridos
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <% @baskets.each do |basket| %>
+                  <div>
+                    <%= link_to baskets_path do %>
+                      <p style="font-size: 14px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"> Cupom <%= basket.coupon.company.name %> - Data: <%= basket.created_at.strftime('%d/%m/%Y') %> no valor de <%= basket.debit %> LEAFS</p>
+                    <% end %>
+                  </div>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>     
     </div>
-  </div>
 
-  
-
-
-  <% @leafs.each do |leaf| %>
-
-    <div>
-      <%= link_to leaf_path(leaf.id) do %>
-        <p>Leafs creditados: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% @leafs_pendent.each do |leaf| %>
-      <div>
-        <%= link_to leaf_path(leaf.id) do %>
-          <p>Leafs calculados - pendente: <%= leaf.credit %> em <%= leaf.created_at.strftime('%d/%m/%Y')%></p>
-        <% end %>
-      </div>
-  <%end%>
-
-  <div>
-  <p>Cupons utilizados</p>
-  <% @baskets.each do |basket| %>
-    <div>
-      <%= link_to baskets_path do %>
-        <p>Leafs debitados: <%= basket.debit %> em <%= basket.created_at.strftime('%d/%m/%Y') %></p>
-      <% end %>
-    </div>
-  <%end%>
   </div>
 
 </div>

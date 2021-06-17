@@ -32,12 +32,17 @@ h4{
   text-decoration: none;
 }
 
-.title{
+.title-footer{
   font-size: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .copyright strong{
   color:#2C8109
+}
+
+.copyright .fa-heart {
+  color: #D23333;
 }
 
 .copyright{
@@ -49,6 +54,9 @@ h4{
   text-decoration: none;
   font-weight: bold;
   background: #f3f3f3;
+  span {
+    font-family: 'Noto Sans JP', sans-serif;
+  };
 }
 .termo{
   color: rgb(59, 59, 59);
@@ -59,3 +67,4 @@ a{
   text-decoration: none;
   color: rgb(59, 59, 59);
 }
+

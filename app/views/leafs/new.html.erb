@@ -2,27 +2,33 @@
   <div class="col-10 ">
     <div class="card-company mt-5 mb-5">
       <div class="form-leaf">
-        <h2 class="p-5"> Simule seus leafs <i class="fab fa-envira green text-center"></i> </h2>
+        <h2 class="p-5" style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none"> Solicitação de LEAFS <i class="fab fa-envira green text-center"></i> </h2>
 
 
-        <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form mx-5', :style => 'text-align: left;' }) do |f| %>
-          <%= f.input :vidro, label: 'Vidro', as: :integer, placeholder: 'Informe a quantidade em kg' %>
-          <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
-          <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
-          <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
-          <%= f.input :dropoff, label: false, collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
+        <%= simple_form_for(:items, url: leafs_path, :html => { :class => 'form-horizontal items-form mx-5', :style => "text-align: left; font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none" }) do |f| %>
+          <div class="row">
+            <div class="col-6">
+              <%= f.input :vidro, label: 'Vidro', as: :integer, placeholder: 'Informe a quantidade em kg' %>
+              <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+            </div>
+            <div class="col-6">
+              <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
+              <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+            </div>
+            <%= f.input :dropoff, label: false, collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
+          </div>
           <%= f.submit class: 'button-green', style: 'width: 100%'%>
         <% end %>
 
         <div class="table-leafs mt-5 p-4">
-          <h4 class="mb-4">Tabela de Conversão</h4>
+          <h4 class="mb-4" style="font-size: 22px; font-family: 'Roboto Slab', serif; text-decoration: none">Tabela de Conversão</h4>
 
           <div class="row">
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #1eae98;">
                 <div class="card-body">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Vidro (Kg)</h6>
-                  <p class="card-text leaf-qtdd"> <i class="fab fa-envira green"></i> 1 </p>
+                  <h6 class="card-title title-leaf" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fas fa-recycle"></i> Vidro (Kg)</h6>
+                  <p class="card-text leaf-qtdd"> <i class="fab fa-envira green"></i> 2 </p>
                 </div>
               </div>
             </div>
@@ -30,7 +36,7 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #3c8dad;">
                 <div class="card-body ">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i>  Papel (kg)</h6>
+                  <h6 class="card-title title-leaf" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fas fa-recycle"></i>  Papel (Kg)</h6>
                   <p class="card-text leaf-qtdd"><i class="fab fa-envira green"></i> 1 </p>
                 </div>
               </div>
@@ -39,7 +45,7 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #f54748;">
                 <div class="card-body">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i>  Plástico (kg)</h6>
+                  <h6 class="card-title title-leaf" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fas fa-recycle"></i>  Plástico (Kg)</h6>
                   <p class="card-text leaf-qtdd"><i class="fab fa-envira green"></i> 4 </p>
                 </div>
               </div>
@@ -48,8 +54,8 @@
             <div class="col-12 col-md-6 col-lg-3">
               <div class="card recycle" style="background-color: #fb9300;">
                 <div class="card-body">
-                  <h6 class="card-title title-leaf"><i class="fas fa-recycle"></i> Metal (kg) </h6>
-                  <p class="card-text leaf-qtdd"><i class="fab fa-envira green"></i> 15 </p>
+                  <h6 class="card-title title-leaf" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fas fa-recycle"></i> Metal (Kg) </h6>
+                  <p class="card-text leaf-qtdd"><i class="fab fa-envira green"></i> 10 </p>
                 </div>
               </div>
             </div>

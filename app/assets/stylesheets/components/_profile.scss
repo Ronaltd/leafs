@@ -1,16 +1,17 @@
-.profile-column h4{
+.profile-column h2{
   font-size: 24px;
-  color: rgba($color: #5c5b5b, $alpha: 1.0);
+  color: rgba($color: #FFFFFF, $alpha: 1.0);
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
 }
 
 .profile-column a{
-  font-size: 18px;
+  font-size: 12px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Sans JP', sans-serif;
   transition: 0.1s;
+  
 }
 
 .profile-column a:hover{
@@ -19,19 +20,32 @@
 }
 
 .profile-column p{
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'EB Garamond', serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .profile-column i{
   color: #7CBF17;
 }
 
-.user-balance p{
+.extrato-profile h4{
+  font-size: 20px;
+  color: rgb(59, 59, 59);
+  text-decoration: none;
+  font-family: 'Roboto Slab', serif;
+  padding-bottom: 10px;
+}
+
+.profile-body-table{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+}
+
+.profile-head-table{
+  font-family: 'Roboto Slab', serif;
   font-size: 18px;
-  font-family: 'EB Garamond', serif;
 }
 
 .success {
