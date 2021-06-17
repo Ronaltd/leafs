@@ -27,9 +27,11 @@ class LeafsController < ApplicationController
   end   
 
   def create
-    @dropoff = Dropoff.find(params[:items][:dropoff])
     @leaf = Leaf.new(user: current_user, credit: 0, accepted: false)
-    @leaf.dropoff = @dropoff
+    if params[:items][:dropoff].present?
+      @dropoff = Dropoff.find(params[:items][:dropoff])
+      @leaf.dropoff = @dropoff
+    end
     if validate_items(params)
       if @leaf.save
         create_items(@leaf, params[:items])
