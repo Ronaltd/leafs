@@ -13,21 +13,17 @@
 
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
 
-min-width: 50%;
-svg{
-  display: none;
-}
-}
-
-#map{
-
+  min-width: 50%;
+  svg{
+    display: none;
+  }
 }
 
 .geo-div {
   position:relative;
-  left: 49%;
+  left: 27%;
   top: 8vh;
-  width: 75%
+  width: 72%
 }
 
 .map-title{
