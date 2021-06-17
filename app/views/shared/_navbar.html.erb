@@ -21,7 +21,7 @@
         <!-- <li class="nav-item dropdown"> -->
 
         <li class="nav-item px-1 mt-3">
-          <%= link_to "Pontos de Coleta", '#', class: "nav-link" %>
+          <%= link_to "Pontos de Coleta", dropoffs_path, class: "nav-link" %>
         </li>
         <li class="nav-item  mt-3">
           <p style="margin-bottom:0;" class='nav-link'>Olá, <%= current_user.username %></p>
@@ -57,7 +57,7 @@
           <%= link_to "Empresas Parceiras", companies_path, class: "nav-link" %>
         </li>
         <li class="nav-item ">
-          <%= link_to "Pontos de Coleta", '#', class: "nav-link" %>
+          <%= link_to "Pontos de Coleta", dropoffs_path, class: "nav-link" %>
         <li class="nav-item ">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
