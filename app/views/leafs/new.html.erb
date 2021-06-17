@@ -15,7 +15,9 @@
               <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
               <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
             </div>
-            <%= f.input :dropoff, label: "Escolha o Ponto de Coleta", collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
+            <div class="ml-5 pl-5 pt-2">
+            <%= f.input :dropoff, label:'Escolha seu ponto de coleta', collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
+            </div>
           </div>
           <%= f.submit class: 'button-green', style: 'width: 100%'%>
         <% end %>
