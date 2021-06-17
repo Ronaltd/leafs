@@ -29,16 +29,8 @@
       <% end %>
     </ul>
 
-
-    <!-- ADMIN -->
-    <h4 class="mt-5 mb-3">Atualizar local da entrega do material:</h4> 
-
-    <%= simple_form_for (@leaf) do |f| %>
-      <%= f.association :dropoff, label: false, input_html: { class: 'select2' } %>
-      <%= f.button :submit, "Creditar leafs", class: 'button-green mb-3' %>
-    <% end %>
-
-
-    <%= link_to "Meus Leafs", leafs_path, class: 'button-transparent mt-4' %>
+    <div class="mt-5">
+      <%= link_to "Meus Leafs", leafs_path, class: 'button-green mt-4' %>
+    </div>
   </div>
 </div>

@@ -11,47 +11,35 @@
 
 /*------------------------search map ------------------*/
 
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+
+min-width: 50%;
+svg{
+  display: none;
+}
+}
+
+#map{
+
+}
+
 .geo-div {
-  padding: 10px;
-  width: 35vw;
-  margin: 0px;
-  position: absolute;
-  top: 30vh;
-  left: 49vw;
-
-
-  h5{
-  margin-left:39px;
-  margin-bottom: 20px;
-  }
-}
-
-
-@media (min-width: 1200px) {
-  .geo-div {
-    padding: 10px;
-    width: 35vw;
-    margin: 0px;
-    position: absolute;
-    top: 30vh;
-    left: 40vw;
-  
-  
-    h5{
-    margin-left:39px;
-    margin-bottom: 20px;
-    }
-  }
-}
-
-/*----------------------------------------------------*/
-
-#map {
-  margin: 0;
-}
-
-.geo{
-  margin-top: 100px;
   position:relative;
+  left: 49%;
+  top: 8vh;
+  width: 75%
 }
 
+.map-title{
+  position:relative;
+  text-align:center;
+  top: 40px;
+}
+
+.search-div{
+  position:relative;
+  left: 80%;
+  top: 50px;
+
+  width: 80%
+}

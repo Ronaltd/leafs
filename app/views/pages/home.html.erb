@@ -10,6 +10,11 @@
         <div class="banner">
           <h1></h1>
           <div style="text-align: center;">
+            <!-- loader -->
+            <div class="outer"></div>
+            <div class="inner">
+              <span>0%</span>
+            </div>
             <!-- Text counter up banner -->
             <span  id='counter-rec' style="display: none;">0</span>
             <h1><span data-total='<%=@total %>' id="number-change" style='font-size: 130px;'>0</span> kg</h1>
@@ -44,22 +49,24 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="geo">
+  <div class="container justify-content-center" >
 
-      <div id="geocoder" class="geo-div"> <h5>Encontre o ponto de coleta mais próximo de você:</h5>
+    <div class="mt-5">
+      <h5 class="map-title">Encontre o ponto de coleta mais próximo de você:</h5>
+      <div id="geocoder"  class="geo-div">
       </div>
-
     </div>
-  </div>
 
-  <div style="background-color: #C5D7BD;">
-    <div
-      id="map"
-      style="width: 60%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
+    <div class="row">
+      <div class="col-12 mt-3">
+        <div
+        id="map"
+        style="width: 100%; height: 550px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+    </div>
   </div>
 
 </div>
