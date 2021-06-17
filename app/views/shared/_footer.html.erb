@@ -4,17 +4,17 @@
       <div class="col-md-4">
         <div class="perg-frequentes">
           <div class="perg-fre py-2">
-            <h4>Perguntas Frequentes</h4>
+            <h4>Como podemos Ajudar?</h4>
               <div class="questions">
-                <p class="title"><i class="fas fa-angle-right"></i> Como o Leafs funciona?</p>
-                <p class="title"><i class="fas fa-angle-right"></i> <%= link_to "Companies", companies_path %> </p>
+                <p class="title-footer"><i class="fas fa-angle-right"></i> <%= link_to "Pontos de Coleta LEAFS", dropoffs_path %> </p>
+                <p class="title-footer"><i class="fas fa-angle-right"></i> <%= link_to "Onde trocar os LEAFS", companies_path %> </p>
               </div>
           </div>
         </div>
       </div>
       <div class="col-md-4 mt-4 pt-3">
-        <p class="title"><i class="fas fa-angle-right"></i> <%= link_to "Drop Off Places", '#' %> </p>
-        <p class="title"><i class="fas fa-angle-right"></i> <%= link_to "Coupons", companies_path(@company) %> </p>
+        <p class="title-footer"><i class="fas fa-angle-right"></i> <%= link_to "Cupons de Desconto", coupons_path %> </p>
+        <p class="title-footer"><i class="fas fa-angle-right"></i></i> <%= link_to "Fale Conosco", root_path %> </p>
       </div>
       <div class="col-md-4 mt-2">
         <div class="icons-block">
@@ -38,6 +38,8 @@
       <a class="termo" href="#" alt="Termo de Uso">Termo de Uso</a>
       |
       <a class="termo" href="#" alt="Política de Uso">Política de Uso</a>
+      -
+      Made with <i class="fas fa-heart"></i> at Le Wagon
     </span>
   </div>
 </div>

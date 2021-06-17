@@ -1,37 +1,36 @@
 <div class="container">
   <div class="card-company">
 
-    <h2 class="mt-5 mb-4">My Leaf</h2>
+    <h2 class="mt-5 mb-4" style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none">Solicitação de LEAFS <i class="fab fa-envira green text-center"></i> </h2>
 
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col"><%= @leaf.accepted ? "Valor Creditado" : "Valor Calculado"  %></th>
-          <th scope="col">Status</th>
-          <th scope="col">Estação de Reciclagem</th>
+          <th scope="col" style="font-size: 18px; font-family: 'Roboto Slab', serif; text-decoration: none"><%= @leaf.accepted ? "Valor Creditado" : "Valor Calculado"  %></th>
+          <th scope="col" style="font-size: 18px; font-family: 'Roboto Slab', serif; text-decoration: none">Status</th>
+          <th scope="col" style="font-size: 18px; font-family: 'Roboto Slab', serif; text-decoration: none">Estação de Reciclagem</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><i class="fab fa-envira green mr-1"></i><%= @leaf.credit %></td>
-          <td><%= @leaf.accepted ? "Aprovado" : "Pendente"  %></td>
-          <td><%= @leaf.dropoff ? @leaf.dropoff.name : "Pendente" %></td>
+          <td style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fab fa-envira green mr-1"></i><%= @leaf.credit %></td>
+          <td style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= @leaf.accepted ? "Aprovado" : "Pendente"  %></td>
+          <td style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= @leaf.dropoff ? @leaf.dropoff.name : "Pendente" %></td>
         </tr>
       </tbody>
     </table>
 
-    <h4 class="mt-5 mb-3 text-center">A Natureza agradece! Material para reciclagem:</h4>
+    <h4 class="mt-5 mb-3 text-center" style="font-size: 20px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">A Natureza agradece! Material para reciclagem:</h4>
 
     <ul class="list-group">
       <% @leaf.items.each do |item| %>
-      <li class="list-group-item"> <%= "#{item.amount}kg - #{item.item_type}" %> </li>
-      <!--GERAR CÓDIGO ALEATÓRIO PARA O USER -->
+        <li class="list-group-item" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"> <%= "#{item.amount}kg - #{item.item_type}" %> </li>
       <% end %>
     </ul>
 
 
     <!-- ADMIN -->
-    <h4 class="mt-5 mb-3">Atualizar local da entrega do material:</h4> 
+    <h4 class="mt-5 mb-3" style="font-size: 20px; font-family: 'Roboto Slab', serif; text-decoration: none">Atualizar local da entrega do material:</h4> 
 
     <%= simple_form_for (@leaf) do |f| %>
       <%= f.association :dropoff, label: false, input_html: { class: 'select2' } %>
