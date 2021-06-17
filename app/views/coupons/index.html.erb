@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h2>Bem-vindo!</h2> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
+      <h2 style="font-size: 40px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;">Bem-vindo!</h2> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
     </div>
   </div>
 <% else %>
@@ -25,7 +25,7 @@
         <% @coupons.each do |coupon| %>
         <tbody>
           <tr>
-            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table rounded-circle mr-1" %></td>
+            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1" %></td>
             <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
             <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
             <td><%= link_to "Adquirir", coupon_baskets_path(coupon.id), method: :create, data:{confirm: "Tem certeza? Valor: #{coupon.leafs_value} leafs"}, class: 'button-transparent ml-2 h6', target: "_blank" %></td>

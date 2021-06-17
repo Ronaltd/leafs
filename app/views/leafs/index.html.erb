@@ -1,7 +1,7 @@
 <!--BANNER DA PÁGINA DO USUÁRIO-->
 <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
   <div class="container text-center mt-5">
-    <h3 style="color:white;">Você contribuiu reciclando <%= @total_user %> KG de lixo com a Leafs!! </h3>
+    <h3 style="font-size: 35px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;">Você contribuiu reciclando <%= @total_user %> KG de lixo com a Leafs!</h3>
   </div>
 </div>
 
@@ -9,7 +9,7 @@
 <div class='container p-3'>
   <!--Saldo-->
   <div class="d-flex justify-content-start mt-4">
-    <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3" style="background-image: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B);">
+    <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 rounded mr-3" style="background-image: linear-gradient(to right, #F24B4Bee, #F2762Eee, #F24B4Bee);">
       <div class='row align-items-center'>
         <div class="profile-image col-md-auto pl-3">
           <% if current_user.photo.attached? %>
@@ -32,7 +32,7 @@
           <p class='mb-0 pt-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
         </div>
         <div class=col-md-auto>
-          <div class='btn btn-success'> <%= link_to "Solicitação LEAFS", new_leaf_path %> </div>
+          <%= link_to "Solicitação LEAFS", new_leaf_path, class: "button-green" %>
         </div>
       </div>
     </div>
@@ -47,9 +47,9 @@
       <table class="table table-hover">
         <thead class="profile-head-table">
           <tr class='align-items-center'>
-            <th scope="col" class="col-3">Data</th>
-            <th scope="col" class="col">Operação</th>
-            <th scope="col" class="col-2">Leafs</th>
+            <th scope="col" class="col-2">Data</th>
+            <th scope="col" class="col-8">Operação</th>
+            <th scope="col" class="col">Leafs</th>
           </tr>
         </thead>
         <tbody class="profile-body-table">
@@ -80,9 +80,9 @@
         <!--COLLAPSE UM-->
         <div class="accordion" id="accordionExample">
           <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="card-header dropdown" id="headingOne">
+              <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none;">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
                   <i class="fas fa-caret-right"></i> Meus Leafs Pendentes
                 </button>
               </h2>
@@ -90,10 +90,10 @@
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-                <% @leafs.each do |leaf| %>
+                <% @leafs_pendent.each do |leaf| %>
                   <div>
                     <%= link_to leaf_path(leaf.id) do %>
-                      <p style="font-size: 14px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Solicitação LEAFS: Data - <%= leaf.created_at.strftime('%d/%m/%Y')%> no valor <%= leaf.credit %> LEAFS </p>
+                      <p class="leaf-p">Solicitação LEAFS: Data - <%= leaf.created_at.strftime('%d/%m/%Y')%> no valor <%= leaf.credit %> LEAFS </p>
                     <% end %>
                   </div>
                 <%end%>
@@ -117,7 +117,7 @@
                 <% @baskets.each do |basket| %>
                   <div>
                     <%= link_to baskets_path do %>
-                      <p style="font-size: 14px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"> Cupom <%= basket.coupon.company.name %> - Data: <%= basket.created_at.strftime('%d/%m/%Y') %> no valor de <%= basket.debit %> LEAFS</p>
+                      <p class="leaf-p"> Cupom <%= basket.coupon.company.name %> - Data: <%= basket.created_at.strftime('%d/%m/%Y') %> no valor de <%= basket.debit %> LEAFS</p>
                     <% end %>
                   </div>
                 <%end%>
