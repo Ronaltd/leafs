@@ -53,5 +53,26 @@
 }
 
 .danger {
-  color: #F44B4E;
+  color: #f44b4e;
 }
+
+.accordion .btn{
+  text-decoration: none;
+  color: #505050;
+}
+
+.accordion .btn:hover{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.leaf-p{
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-decoration: none;
+}
+
+.leaf-p:hover{
+  text-decoration: none;
+}
+
