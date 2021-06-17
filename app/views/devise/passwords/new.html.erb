@@ -2,7 +2,7 @@
   <div class="col-6 ">
     <div class="card-company">
 
-      <h2 class="my-3">Forgot your password?</h2>
+      <h2 class="my-3">Esqueceu a sua senha?</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Send email", class: 'button-green my-2' %>
+          <%= f.button :submit, "Enviar email", class: 'button-green my-2' %>
         </div>
       <% end %>
 
