@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container">
   <div class="card-company">
-    <h1 class="mt-3">Meus Cupons</h1>
+    <h2 class="mt-3" style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none">Meus Cupons</h2>
     <div class="d-flex justify-content-center">
       <table class="content-table">
         <thead>
@@ -11,8 +11,8 @@
         <tbody>
           <tr>
             <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1" %></td>
-            <td><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
-            <td><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
+            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
             <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
           </tr>
         </tbody>
@@ -21,21 +21,21 @@
     </div>
     <div class="container">
       <div class="table-leafs mt-4 p-4">
-        <h3 class="mb-4">Cupons Resgatados</h3>
+        <h3 class="mb-4" style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none">Cupons Resgatados</h3>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col">Leafs debitados</th>
-              <th scope="col">Código</th>
-              <th scope="col">Data</th>
+              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Leafs debitados</th>
+              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Código</th>
+              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Data</th>
             </tr>
           </thead>
           <tbody>
             <% @baskets.each do |basket| %>
               <tr>
-                <td><i class="fab fa-envira green mr-1"></i><%= basket.debit %></td>
-                <td><%= basket.coupon.code %></td>
-                <td><%= basket.created_at.strftime('%d/%m/%Y')%></td>
+                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fab fa-envira green mr-1"></i><%= basket.debit %></td>
+                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.coupon.code %></td>
+                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.created_at.strftime('%d/%m/%Y')%></td>
               </tr>
             <%end%>
           </tbody>
