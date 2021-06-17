@@ -83,7 +83,7 @@
             <div class="card-header dropdown" id="headingOne">
               <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none;">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
-                  <i class="fas fa-caret-right"></i> Meus Leafs Pendentes
+                  <i class="fas fa-angle-right"></i> Meus Leafs Pendentes
                 </button>
               </h2>
             </div>
@@ -92,8 +92,8 @@
               <div class="card-body">
                 <% @leafs_pendent.each do |leaf| %>
                   <div>
-                    <%= link_to leaf_path(leaf.id) do %>
-                      <p class="leaf-p">Solicitação LEAFS: Data - <%= leaf.created_at.strftime('%d/%m/%Y')%> no valor <%= leaf.credit %> LEAFS </p>
+                    <%= link_to leaf_path(leaf.id), class:"leaf-p" do %>
+                      <p >Solicitação LEAFS: Data - <%= leaf.created_at.strftime('%d/%m/%Y')%> no valor <%= leaf.credit %> LEAFS </p>
                     <% end %>
                   </div>
                 <%end%>
@@ -107,7 +107,7 @@
             <div class="card-header" style="background-color: linear-gradient(to right, #F24B4B, #F2762E, #F24B4B)" id="headingTwo">
               <h2 class="mb-0" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">
                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                  <i class="fas fa-caret-right"></i> Cupons Adquiridos
+                  <i class="fas fa-angle-right"></i> Cupons Adquiridos
                 </button>
               </h2>
             </div>
@@ -116,8 +116,8 @@
               <div class="card-body">
                 <% @baskets.each do |basket| %>
                   <div>
-                    <%= link_to baskets_path do %>
-                      <p class="leaf-p"> Cupom <%= basket.coupon.company.name %> - Data: <%= basket.created_at.strftime('%d/%m/%Y') %> no valor de <%= basket.debit %> LEAFS</p>
+                    <%= link_to baskets_path, class:"leaf-p" do %>
+                      <p> Cupom <%= basket.coupon.company.name %> - Data: <%= basket.created_at.strftime('%d/%m/%Y') %> no valor de <%= basket.debit %> LEAFS</p>
                     <% end %>
                   </div>
                 <%end%>

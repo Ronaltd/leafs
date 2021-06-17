@@ -19,7 +19,7 @@
             <%= f.input :dropoff, label:'Escolha seu ponto de coleta', collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
             </div>
           </div>
-          <%= f.submit class: 'button-green', style: 'width: 100%'%>
+          <%= f.button :submit, "Salvar Leafs", class: 'button-green', style: 'width: 100%'%>
         <% end %>
 
         <div class="table-leafs mt-5 p-4">
