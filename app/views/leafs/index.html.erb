@@ -57,7 +57,7 @@
             <% if item.instance_of?(Leaf) %>
               <tr>
                 <td class='success'> <%= item.created_at.strftime('%d/%m/%Y')%> </td>
-                <td class='success'> <%#= item.dropoff.name %> </td>
+                <td class='success'> <%= item.dropoff.name if item.dropoff%> </td>
                 <td class='success'> + <i class="fab fa-envira"></i> <%= item.credit %> </td>
               </tr>
             <% else %>

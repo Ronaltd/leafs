@@ -27,7 +27,9 @@ class LeafsController < ApplicationController
   end   
 
   def create
+    @dropoff = Dropoff.find(params[:items][:dropoff])
     @leaf = Leaf.new(user: current_user, credit: 0, accepted: false)
+    @leaf.dropoff = @dropoff
     if validate_items(params)
       if @leaf.save
         create_items(@leaf, params[:items])
@@ -47,14 +49,14 @@ class LeafsController < ApplicationController
     @leaf = Leaf.find(params[:id])
     @dropoff = Dropoff.find(params[:leaf][:dropoff_id].to_i)
     
-    if @leaf.update(dropoff: @dropoff, accepted: true)
-      calculate_leafs
-      balance = @leaf.user.leafs_balance + @leaf.credit
-      @leaf.user.update(leafs_balance: balance)
-      redirect_to @leaf, notice: 'Leafs creditados com sucesso.'
+    if @leaf.update(dropoff: @dropoff)
+      # calculate_leafs
+      # balance = @leaf.user.leafs_balance + @leaf.credit
+      # @leaf.user.update(leafs_balance: balance)
+      redirect_to @leaf, notice: 'Leaf aguardando aprovação.'
     else
       render :show, notice: "Atualização não realizada."
-    end 
+    end
     
   end
 

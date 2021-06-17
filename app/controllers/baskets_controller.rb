@@ -20,10 +20,10 @@ class BasketsController < ApplicationController
     end
       
     if @basket.save
-      calculate_leafs
+      calculate_leafs(current_user)
       if @basket.debit
-        balance = @basket.user.leafs_balance - @basket.debit
-        @basket.user.update(leafs_balance: balance )
+        # balance = @basket.user.leafs_balance - @basket.debit
+        # current_user.update(leafs_balance: session[:user_balance])
         redirect_to baskets_path, notice: 'Cupom adquirido com sucesso.'
       end
 

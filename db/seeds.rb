@@ -12,20 +12,20 @@ puts 'Cleaning database'
 Company.destroy_all
 
 
-admin=User.create!({ username: 'AdminUser', first_name: "Admin", last_name: "User", email: 'admin@leafs.com', password: 'password', password_confirmation: 'password'})
+admin=User.create!({ username: 'AdminUser', first_name: "Admin", last_name: "User", email: 'admin@leafs.com', password: 'password', password_confirmation: 'password', admin: true})
 
-admin.toggle!(:admin)
+# admin.toggle!(:admin)
 
-if admin.valid?
-  admin.save()
+# if admin.valid?
+#   admin.save()
 
-elsif admin.errors.any?
-  admin.errors.full_messages.each do |msg|
-    puts msg
-  end
-else
-  puts "****NOT VALID****"
-end
+# elsif admin.errors.any?
+#   admin.errors.full_messages.each do |msg|
+#     puts msg
+#   end
+# else
+#   puts "****NOT VALID****"
+# end
 
 
 User.create!(

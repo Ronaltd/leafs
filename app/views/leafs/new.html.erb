@@ -10,11 +10,9 @@
           <%= f.input :papel, label: 'Papel',as: :integer, placeholder: 'Informe a quantidade em kg' %>
           <%= f.input :plastico, label: 'Plástico', as: :integer, placeholder: 'Informe a quantidade em kg'%>
           <%= f.input :metal, label: 'Metal',as: :integer, placeholder: 'Informe a quantidade em kg' %>
+          <%= f.input :dropoff, label: false, collection:Dropoff.order(:name), input_html: { class: 'select2' } %>
           <%= f.submit class: 'button-green', style: 'width: 100%'%>
         <% end %>
-
-
-
 
         <div class="table-leafs mt-5 p-4">
           <h4 class="mb-4">Tabela de Conversão</h4>
