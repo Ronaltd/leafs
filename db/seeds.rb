@@ -203,253 +203,248 @@ Dropoff.create(
 
 Dropoff.create(
   name: 'McDonalds - Suissa',
-  address: 'Av. Hermes Fontes, 1118 - Suissa, Aracaju - SE, 49050-000',
+  address: 'Av. Hermes Fontes, 1118 - Suissa, Aracaju - SE',
   opening_hours: '24h'
   )
 
 Dropoff.create(
   name: 'Hirota - Portal',
-  address: 'Av. Dr. Guilherme Dumont Vilares, 1450 - Jardim Londrina, São Paulo - SP, 05640-003',
+  address: 'Av. Dr. Guilherme Dumont Vilares, 1450 - Jardim Londrina, São Paulo - SP',
   opening_hours: '24h'
   )
 
   Dropoff.create(
     name: 'Recitotal',
-    address: ' Av. Jaraguá, 246 - Cidade Industrial Satélite de São Paulo, Guarulhos - SP, 07221-050',
+    address: ' Av. Jaraguá, 246 - Cidade Industrial Satélite de São Paulo, Guarulhos - SP',
     opening_hours: 'Segunda a sexta-feira 7:00-17:00'
     )
   
   Dropoff.create(
     name: ' J.B. Reciclagem',
-    address: ' R. dos Protestantes, 49 - Centro Histórico de São Paulo, São Paulo - SP, 01212-020',
+    address: ' R. dos Protestantes, 49 - Centro Histórico de São Paulo, São Paulo - SP',
     opening_hours: 'Segunda a sexta-feira 7:00-19:00'
     )
   
   Dropoff.create(
     name: 'Supermercados Avenida',
-    address: ' Av. Dr. João Pinheiro, 3013, Caeté - MG, 34800-000',
-    opening_hours: '24h'
+    address: 'Avenida Doutor João Pinheiro, 3013, Caeté, Minas Gerais',
+    opening_hours: 'Segunda a sexta-feira 7:00-19:00'
     )
   
   Dropoff.create(
     name: 'Supermercado Stock Comércio',
-    address: ' R. Fernando Linhares Guerra, 25 - Centro, Caeté - MG, 34800-000',
-    opening_hours: '24h'
+    address: 'Rua Fernando Linhares Guerra, 25 , Caeté,  Minas Gerais',
+    opening_hours: 'Segunda a sexta-feira 7:00-19:00'
     )
   
   Dropoff.create(
     name: ' Supermercados BH - Caete ',
-    address: ' Av. Dr. João Pinheiro, 4660 - MORGAN, Caeté - MG, 34800-000',
-    opening_hours: '24h'
+    address: ' Avenida Doutor João Pinheiro, 4660, Caeté, Minas Gerais',
+    opening_hours: 'Segunda a sexta-feira 7:00-19:00'
     )
   
   Dropoff.create(
-    name: ' Mercado Municipal de Caete ',
-    address: ' R. Pres. Kenedy, Caeté - MG, 34800-000',
-    opening_hours: '24h'
+    name: 'Mercado Municipal de Caete',
+    address: 'Rua Presidente Kenedy, Caeté, Minas Gerais',
+    opening_hours: 'Segunda a sexta-feira 7:00-19:00'
     )
   
   Dropoff.create(
-    name: 'Supermercados BH - Centro',
-    address: 'Av. Paraná, 470 - Centro, Belo Horizonte - MG, 30120-020',
+    name: 'Supermercados BH - Belo Horizonte - Centro',
+    address: 'Avenida Paraná, 470, Belo Horizonte, Minas Gerais',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercados BH - Palmeiras',
-    address: ' R. Júlio de Castilho, 1070 - Palmeiras, Belo Horizonte - MG, 30570-080',
+    name: 'Supermercados BH - Belo Horizonte - Palmeiras',
+    address: 'Rua Júlio de Castilho, 1070, Belo Horizonte, Minas Gerais',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercados BH - Vila Suzana ',
-    address: ' Av. Cristiano Machado, 5555 - Vila Suzana, Belo Horizonte - MG, 30331-970',
+    name: ' Supermercados BH - Belo Horizonte - Vila Suzana ',
+    address: ' Avenida Cristiano Machado, 5555, Belo Horizonte, Minas Gerais',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercados BH - Barreiro',
-    address: ' Av. Afonso Vaz de Melo, 465 - Barreiro, Belo Horizonte - MG, 30640-070',
+    name: ' Supermercados BH - Belo Horizonte - Barreiro',
+    address: ' Avenida Afonso Vaz de Melo, 465, Belo Horizonte, Minas Gerais',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' DIA Supermercados - Belo Horizonte ',
-    address: ' R. da Bahia, 450 - Centro, Belo Horizonte - MG, 30160-010',
+    name: ' DIA Supermercados - Belo Horizonte - Centro ',
+    address: 'Rua da Bahia, 450, Belo Horizonte, Minas Gerais',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' Pão de Açúcar - Copacabana – Lido ',
-    address: ' Av. Nossa Sra. de Copacabana, 109 - Copacabana, Rio de Janeiro - RJ, 22020-002',
+    address: 'Avenida Nossa Senhora de Copacabana, 109, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercado Zona Sul – Ipanema ',
-    address: ' R. Visc. de Pirajá, 577 - Ipanema, Rio de Janeiro - RJ, 22410-003',
+    name: 'Supermercado Zona Sul – Ipanema ',
+    address: 'Rua Visconde de Pirajá, 577, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermarket - Rio das Pedras',
-    address: ' Av. Eng. Souza Filho, Lt 10 - Itanhangá, Rio de Janeiro - RJ',
+    name: 'Supermarket - Rio das Pedras - Itanhangá',
+    address: 'Avenida Engenheiro Souza Filho, Lt 10, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Princesa Supermercados - Catete',
-    address: ' R. do Catete, 120 - Catete, Rio de Janeiro - RJ, 22220-001',
+    name: 'Princesa Supermercados - Catete',
+    address: 'Rua do Catete, 120, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Princesa Supermercados - Laranjeiras',
-    address: ' R. das Laranjeiras, 218 - Laranjeiras, Rio de Janeiro - RJ, 22240-003',
+    name: 'Princesa Supermercados - Laranjeiras',
+    address: 'Rua das Laranjeiras, 218, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercados Campeão - Botafogo',
-    address: ' R. Gen. Polidoro, 74 - Botafogo, Rio de Janeiro - RJ, 22280-005',
+    name: 'Supermercados Campeão - Botafogo',
+    address: 'Rua General Polidoro, 74, Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercado Zona Sul - Centro',
-    address: ' R. da Alfândega, 33 - Centro, Rio de Janeiro - RJ, 20070-000',
+    name: 'Supermercado Zona Sul - Centro - Rio de Janeiro',
+    address: 'Rua da Alfândega, 33 , Rio de Janeiro, Rio de Janeiro',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Gonzaga Hipermercado - Aracajú',
-    address: ' R. Castro Alves, 618 - Ponto Novo, Aracaju - SE, 49047-090',
+    name: 'Gonzaga Hipermercado - Aracaju - Ponto Novo',
+    address: 'Rua Castro Alves, 618, Aracaju, Sergipe',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Supermercado Compre Bem Aracajú',
-    address: ' Av. Prof. José Freitas de Andrade, 3173 - Coroa do Meio, Aracaju - SE, 49035-680',
+    name: ' Supermercado Compre Bem Aracaju - Coroa do Meio',
+    address: ' Av. Prof. José Freitas de Andrade, 3173, Aracaju, Sergipe',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Pão de Açúcar - Sudoeste',
-    address: ' CCSW 06 Ljs 4/5, CCSW 6, Brasília - DF, 71505-000',
+    name: 'Pão de Açúcar - Sudoeste - Brasília',
+    address: 'CCSW 06, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' BIG BOX Supermercados 503 SUL',
-    address: ' BL C - SHC/S CR QD 503, loja 70 - Asa Sul, Brasília - DF, 70331-530',
+    name: 'BIG BOX Supermercados 503 SUL - Asa Sul - Brasília ',
+    address: 'BL C SHC/S CR QD 503, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' BIG BOX Supermercados 402 NORTE',
-    address: ' SHC/N EQ 402/403 Bloco A, SHCN, Brasília - DF, 70834-500',
+    name: 'BIG BOX Supermercados 402 NORTE - Brasília',
+    address: 'SHC/N EQ 402/403 Bloco A, SHCN, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Pão de Açúcar - Águas Claras',
-    address: ' Quadra 206 Lote 02 Praça Tuim - Águas Claras, Brasília - DF, 71925-180',
+    name: 'Pão de Açúcar - Águas Claras - Brasília',
+    address: 'Quadra 206 Lote 02 Praça Tuim, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Pão de Açúcar - Sul 516',
-    address: ' SCRS 516 Bloco A Ljs 45/46, Brasília - DF, 70381-515',
+    name: 'Pão de Açúcar - Sul 516 - Brasília',
+    address: 'SCRS 516 Bloco A Ljs 45/46, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Pão de Açúcar - Sul 304/305',
-    address: ' SHCS 304/305, s/n Bloco A MC, SHCS, Brasília - DF, 70337-010',
+    name: 'Pão de Açúcar - Sul 304/305',
+    address: 'SHCS 304/305, s/n Bloco A MC, Brasília, Distrito Federal',
     opening_hours: '24h'
   )
   
   Dropoff.create(
-    name: ' Pão de Açúcar - Moema',
-    address: ' Av. Ibirapuera, 3068 - Moema, São Paulo - SP, 04028-003',
+    name: ' Pão de Açúcar - Moema - São Paulo',
+    address: ' Avenida Ibirapuera, 3068, Moema, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' St. Marche Perdizes Sumaré ',
-    address: ' Av. Sumaré, 721 - Perdizes, São Paulo - SP, 05016-090',
+    address: ' Avenida Sumaré, 721, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' Supermercados Mambo - Morumbi',
-    address: ' Av. Giovanni Gronchi, 2799 - Morumbi, São Paulo - SP, 05651-002',
+    address: ' Avenida Giovanni Gronchi, 2799, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' Supermercados Mambo - Vila Madalena',
-    address: ' R. Dep. Lacerda Franco, 553 - Vila Madalena, São Paulo - SP, 05418-001',
+    address: ' Rua Deputado Lacerda Franco, 553, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' Pão de Açúcar - Vila Leopoldina',
-    address: ' Av. Imperatriz Leopoldina, 845 - Vila Leopoldina, São Paulo - SP, 05305-011',
+    address: ' Avenida Imperatriz Leopoldina, 845, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
   
   Dropoff.create(
     name: ' Pão de Açúcar - Clodomiro Amazonas',
-    address: ' Av. Sumaré, 721 - Perdizes, São Paulo - SP, 05016-090',
+    address: ' Avenida Sumaré, 721, São Paulo ,São Paulo',
     opening_hours: '24h'
   )
 
+  
   Dropoff.create(
-    name: "Megga Atacadista",
-    address: "Tv. Pedro Garcia Moreno Neto, 25 - Inácio Barbosa, Aracaju - SE, 49041-146",
-    opening_hours: '24h'
-  )
-
-  Dropoff.create(
-    name: "Epa Supermercados - Serra/BH",
-    address: "R. Caraça, 600 - Serra, Belo Horizonte - MG, 30220-260",
+    name: "Epa Supermercados - Serra - Belo Horizonte",
+    address: "Rua Caraça, 600, Belo Horizonte, Minas Gerais",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Mercado Distrital do Cruzeiro - BH",
-    address: "R. Ouro Fino, 452 - Cruzeiro, Belo Horizonte - MG, 30310-110",
+    address: "Rua Ouro Fino, 452, Belo Horizonte, Minas Gerais",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Supernosso Cruzeiro",
-    address: "Av. Afonso Pena, 3328 - Cruzeiro, Belo Horizonte - MG, 30001-970",
+    address: "Avenida Afonso Pena, 3328, Belo Horizonte, Minas Gerais",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Supermercado Verdemar",
-    address: "R. do Ouro, 195 - Serra, Belo Horizonte - MG, 30220-000",
+    address: "Rua do Ouro, 195, Belo Horizonte, Minas Gerais",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Extra BH Centro",
-    address: "Av. Francisco Sales, 898 - Santa Efigênia, Belo Horizonte - MG, 30150-221",
+    address: "Avenida Francisco Sales, 898, Belo Horizonte, Minas Gerais",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Carrefour Hipermercado - Barra - RJ",
-    address: "Av. das Américas, 5150 - Barra da Tijuca, Rio de Janeiro - RJ, 22640-102",
+    address: "Avenida das Américas, 5150, Rio de Janeiro, Rio de Janeiro",
     opening_hours: '24h'
   )
 
   Dropoff.create(
     name: "Leroy Merlin Rio Barra - RJ",
-    address: "Av. Ayrton Senna, 2000 - Barra da Tijuca, Rio de Janeiro - RJ, 22775-003",
+    address: "Avenida Ayrton Senna, 2000, Rio de Janeiro, Rio de Janeiro",
     opening_hours: '24h'
   )
 
