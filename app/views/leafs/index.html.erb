@@ -22,8 +22,8 @@
         <div class="profile-column col p-0">
           <h2 class='mb-0'><%= current_user.first_name %> <%= current_user.last_name %></h2>
           <div class='d-flex justify-content-start align-items-between'>
-            <p class='mb-0 pt-2 pr-2'> <a href="#"> Gerenciar Conta </a></p>
-            <p class='mb-0 pt-2 pl-2'> <a href="#"> Sair </a></p>
+            <%= link_to "Gerenciar Conta", edit_user_registration_path(current_user), class:"user-p"  %>
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, class:"user-q" %>
           </div>
         </div>
         <!--Valor do Saldo-->
