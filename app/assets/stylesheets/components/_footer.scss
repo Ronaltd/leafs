@@ -70,13 +70,29 @@ a{
   text-decoration: none;
   color: rgb(59, 59, 59);
 }
- 
+
+// Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .footer{
-    display: none;
-  }
- 
   .info-cd-fc{
     padding-top: 0px;
   }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px) {
+  .info-cd-fc{
+    padding-top: 62px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 992px) {
+  .info-cd-fc{
+    padding-top: 62px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1200px) {
+
 }

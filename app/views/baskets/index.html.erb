@@ -10,10 +10,10 @@
         <% @coupons.each do |coupon| %>
         <tbody>
           <tr>
-            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1" %></td>
+            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1 ml-2" %></td>
             <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5 mr-1"><strong><%= @companies.find(coupon.company_id).name %></strong> - <%= coupon.discount %></span></td>
-            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
-            <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent h6 btn-site', target: "_blank" %></td>
+            <td class="td-cupom" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent h6 mr-1 btn-site', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>
@@ -35,7 +35,7 @@
               <% @baskets.each do |basket| %>
                 <tr>
                   <td style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fab fa-envira green mr-1"></i><%= basket.debit %></td>
-                  <td style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.coupon.code %></td>
+                  <td style="font-size: 13px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.coupon.code %></td>
                   <td style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.created_at.strftime('%d/%m/%Y')%></td>
                 </tr>
               <%end%>

@@ -68,6 +68,10 @@
   .content-table .img-table {
     display: none;
   }
+
+  .content-table .td-cupom {
+    text-align: right;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -112,5 +116,9 @@
     font-size: 18px;
     min-width: 100px;
     text-align: left;
+  }
+
+  .content-table td i{
+    display: none;
   }
 }
