@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center container">
-  <div class="col-6 ">
+  <div class="col-12 col-xl-6 col-lg-6 col-md-10">
     <div class="card-company">
 
       <h2 class="my-3">Esqueceu a sua senha?</h2>
@@ -7,7 +7,7 @@
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs mx-5">
+        <div class="form-inputs mx-0 mx-xl-5 mx-lg-5 mx-md-5">
           <%= f.input :email,
                       required: true,
                       autofocus: true,
