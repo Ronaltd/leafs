@@ -91,7 +91,30 @@
 }
  
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 768px) {
+  #number-change {
+    font-size: 75px;
+  }
+
+  .banner h1{
+    font-size: 45px;
+  }
+
+  .banner-index p{
+    padding: 0 80px
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 992px) {
+  #number-change {
+    font-size: 85px;
+  }
+
+  .banner h1{
+    font-size: 45px;
+  }
+
   .banner-index p{
     padding: 0 80px
   }

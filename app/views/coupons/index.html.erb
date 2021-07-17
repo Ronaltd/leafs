@@ -31,10 +31,10 @@
         <% @coupons.each do |coupon| %>
         <tbody>
           <tr>
-            <td><%=image_tag "#{@companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1" %></td>
+            <td><%=image_tag "#{@companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table ml-3 mr-2" %></td>
             <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5"> <strong><%= @companies.find(coupon.company_id).name %></strong> - <%= coupon.discount %></span></td>
             <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6 btn-site', target: "_blank" %></td>
-            <td><%= link_to "Adquirir", coupon_baskets_path(coupon.id), method: :create, data:{confirm: "Tem certeza? Valor: #{coupon.leafs_value} leafs"}, class: 'button-transparent h6', target: "_blank" %></td>
+            <td><%= link_to "Adquirir", coupon_baskets_path(coupon.id), method: :create, data:{confirm: "Tem certeza? Valor: #{coupon.leafs_value} leafs"}, class: 'button-transparent h6 mr-1', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>
