@@ -26,19 +26,15 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
  
-.user-p {
-  
-  margin-bottom: 0px;
-  padding-top: 10px;
-  padding-right: 10px
-}
+// .user-p {
+//   margin-bottom: 0px;
+//   padding-top: 0px;
+// }
  
-.user-q {
-  
-  margin-bottom: 0px;
-  padding-top: 10px;
-  padding-left: 10px
-}
+// .user-q {
+//   margin-bottom: 0px;
+//   padding-top: 10px;
+// }
  
 .profile-column i{
   color: #7CBF17;
@@ -93,11 +89,5 @@
  
  
 @media (min-width: 100px) and (max-width: 575px) {
-  .profile-column {
-    margin-left: 15px;
-  }
- 
-  .sol-leafs {
-    margin-top: 10px;
-  }
+
 }
