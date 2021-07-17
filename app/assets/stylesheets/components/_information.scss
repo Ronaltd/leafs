@@ -1,7 +1,7 @@
 .information{
   display: block;
 }
-
+ 
 .information h2{
   text-align: center;
   text-decoration: none;
@@ -10,7 +10,7 @@
   font-family: 'Roboto Slab', serif;
   margin-bottom: 30px;
  }
-
+ 
 .information p{
   text-align: justify;
   text-decoration: none;
@@ -18,29 +18,28 @@
   padding-left: 5px;
   padding-right: 5px;
   font-family: 'Noto Sans JP', sans-serif;
-  ;
 }
-
+ 
 .info-space{
   display:flex;
   justify-content: space-between;
   align-items: start;
-  padding: 10px 150px;
+  padding: 25px 150px;
 }
-
+ 
 .img-info{
   margin-bottom: 15px;
-  padding-top: 5px;
+  padding-top: 8px;
   transition: 0.5s;
   height: 100px
 }
-
+ 
 .info {
   transition: 0.5s;
   border-radius: 15px;
-  width: 33%
+  width: 100%;
 }
-
+ 
 .info:hover{
   background: rgb(235, 235, 235);
   padding-top: 5px;
@@ -49,8 +48,125 @@
     transform: scale(1.1);
   }
 }
-
+ 
 #recycle{
   padding-left: 105px;
   padding-bottom: 10px;
+}
+ 
+ 
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .info-space {
+    display: grid;
+  }
+ 
+  .img-info{
+    margin-bottom: 15px;
+  }
+ 
+  .info{
+    width: auto;
+    margin-bottom: 25px;
+    img {
+      padding-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+ 
+  .info p {
+    text-align: center;
+    font-size: 15px;
+  }
+ 
+  .info-space{
+    padding: 10px 0px;
+  }
+ 
+  .information h2{
+    margin-bottom: 0px;
+    font-size: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+   }
+}
+ 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 768px){
+  .info-space {
+    display: grid;
+  }
+ 
+  .img-info{
+    margin-bottom: 15px;
+  }
+ 
+  .info{
+    width: auto;
+    margin-bottom: 25px;
+    margin-left: 45px;
+    margin-right: 45px;
+    img {
+      padding-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+ 
+  .info p {
+    text-align: center;
+  }
+ 
+  .info-space{
+    padding: 10px 0px;
+  }
+ 
+  .information h2{
+    margin-bottom: 0px;
+    font-size: 25px;
+    padding-right: 180px;
+    padding-left: 180px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+   }
+}
+ 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 992px){
+  .info-space {
+    display: grid;
+  }
+ 
+  .img-info{
+    margin-bottom: 15px;
+  }
+ 
+  .info{
+    width: auto;
+    margin-bottom: 25px;
+    margin-left: 45px;
+    margin-right: 45px;
+    img {
+      padding-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+ 
+  .info p {
+    text-align: center;
+  }
+ 
+  .info-space{
+    padding: 10px 0px;
+  }
+ 
+  .information h2{
+    margin-bottom: 0px;
+    font-size: 25px;
+    padding-right: 180px;
+    padding-left: 180px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+   }
 }

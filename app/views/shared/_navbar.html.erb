@@ -2,12 +2,12 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
     <% end %>
-
+ 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
+ 
+ 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px;">
       <% if user_signed_in? %>
@@ -17,24 +17,24 @@
         <li class="nav-item px-1 mt-3">
           <%= link_to "Empresas Parceiras", companies_path, class: "nav-link" %>
         </li>
-
+ 
         <!-- <li class="nav-item dropdown"> -->
-
+ 
         <li class="nav-item  mt-3">
           <p style="margin-bottom:0;" class='nav-link'>Olá, <%= current_user.username %></p>
         </li>
-
+ 
         <!-- Contador leafs aprovados -->
-
+ 
         <li class="nav-item mt-4">
           <!-- @user_leafs on application_controller.rb -->
         <% unless current_user.admin %>
           <p style="margin-bottom:0;"><i class="fab fa-envira green"></i><%= link_to "#{current_user.leafs_balance}", leafs_path %></p>
         <% end %>
         </li>
-
+ 
         <!-- -------------------------- -->
-
+ 
         <li class="nav-item dropdown mt-2">
           <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

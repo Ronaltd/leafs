@@ -2,36 +2,33 @@
 <% if user_signed_in? %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h2 style="font-size: 35px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;"> 
-      Bem-Vindo!
-      </h2> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
+      <h2 style="font-size: 35px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white;"> Bem-Vindo!</h2> <!--AJUSTAR A MENSAGEM DO BANNER PARA QUANDO LOGADO-->
       <p style="font-weight: bold"> Preservar o meio ambiente é agir no presente para proteger o futuro. Já reciclou o seu lixo hoje?</p>
     </div>
   </div>
 <% else %>
   <div class="banner-index" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2021-03/csv20-ff6w3z-safeguarding-the-environment.jpg?h=b8626526&itok=yQPv3mQl);">
     <div class="container text-center mt-5">
-      <h2 style="font-size: 40px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white; line-heigth: 1.6;"> Faça parte dessa mudança!
-      </h2>
-        <p style="font-weight: bold"> A preservação do meio ambiente começa com pequenas atitudes diárias! </p>
+      <h2 style="font-size: 40px; font-family: 'Roboto Slab', serif; text-decoration: none; color:white; line-heigth: 1.6;"> Faça parte dessa mudança!</h2>
+      <p style="font-weight: bold"> A preservação do meio ambiente começa com pequenas atitudes diárias! </p>
       <br>
       <%= link_to 'Cadastre-se', new_user_registration_path, class: 'button-orange' %>
     </div>
   </div>
 <% end %>
-
-<div class='container mt-5'>
-  <div class="row mb-5">
-    <div class="col-12 col-md-4 col-sm-6">
-      <%= link_to 'Ver todos os cupons', coupons_path, class: 'button-green'%>
+ 
+<div class='container mt-4 mt-xl-5 mt-lg-5 mt-md-5 mt-sm-4'>
+  <div class="row justify-content-center justify-content-xl-start justify-content-lg-start justify-content-md-center justify-content-sm-center mb-xl-5 mb-lg-5 mb-md-12 mb-sm-3 mb-4">
+    <div class="col-12 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-3 mb-xl-0 mb-lg-0 text-center text-xl-left text-lg-left">
+      <%= link_to 'Ver todos os cupons', coupons_path, class:'button-green'%>
     </div>
-    <div class="col-12 col-md-8 ">
+    <div class="col-12 col-xl-6 col-lg-6 col-md-12 col-sm-6 text-center">
       <h2 class='align-content-center'  style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none;">Empresas Parceiras - Compras Online</h2>
     </div>
   </div>
   <div class='row'>
     <% @companies.each do |company| %>
-      <div class=" col-lg-3  col-md-6 col-sm-6 mb-5">
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
         <div class="card-companies">
           <%= link_to company_path(company) do %>
             <%= image_tag "#{company.logo}", size: "213x128", class: 'mb-2' %>

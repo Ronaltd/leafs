@@ -1,17 +1,19 @@
-
 .footer{
   background-color: #FFFFFF;
-  padding: 0px 150px 0px 150px;
+ 
   margin-top: 35px;
 }
-
+ 
+.info-cd-fc{
+  padding-top: 40px;
+}
+ 
 .icons-block{
   background-color: #FFFFFF;
-  width: 300px;
   justify-content: center;
   align-items: center;
 }
-
+ 
 .fontawesome{
   color: rgba($color: #505050, $alpha: 0.6);
   font-size: 28px;
@@ -19,12 +21,12 @@
   text-decoration: none;
   text-align: center;
 }
-
+ 
 .fontawesome:hover{
   color: rgba($color: #1b1b1b, $alpha: 0.6);
 }
-
-
+ 
+ 
 h4{
   color: rgba($color: #000000, $alpha: 0.6);
   font-weight: bold;
@@ -32,20 +34,20 @@ h4{
   text-decoration: none;
   font-family: 'Roboto Slab';
 }
-
+ 
 .title-footer{
   font-size: 16px;
   font-family: 'Noto Sans JP', sans-serif;
 }
-
+ 
 .copyright strong{
   color:#2C8109
 }
-
+ 
 .copyright .fa-heart {
   color: #D23333;
 }
-
+ 
 .copyright{
   background-color:#FFFFFF;
   display: block;
@@ -63,9 +65,18 @@ h4{
   color: rgb(59, 59, 59);
   text-decoration: none;
 }
-
+ 
 a{
   text-decoration: none;
   color: rgb(59, 59, 59);
 }
-
+ 
+@media (min-width: 100px) and (max-width: 575px) {
+  .footer{
+    display: none;
+  }
+ 
+  .info-cd-fc{
+    padding-top: 0px;
+  }
+}

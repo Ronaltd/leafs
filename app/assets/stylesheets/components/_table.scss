@@ -6,13 +6,13 @@
   color: #505050;
   text-align: left;
 }
-
-
+ 
+ 
 .content-table td{
   padding: 25px 15px;
   flex-wrap: wrap;
 }
-
+ 
 .content-table tr {
     color: rgb(90, 90, 90);
     border-radius: 50px;
@@ -36,7 +36,7 @@
     transition: 0.5s;
   }
 }
-
+ 
 .content-table tr:hover{
   color: #1b1b1b;
   background: rgb(243, 243, 243);
@@ -47,11 +47,7 @@
     transform: rotate(90deg);
   }
 }
-
+ 
 // .content-table .img-table{
   
 // }
-
-
-
-
