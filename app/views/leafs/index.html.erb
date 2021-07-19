@@ -11,7 +11,7 @@
   <div class="mt-4">
     <div class="col-12 col-md-12 col-lg-12 shadow bg-white p-3 mb-2 mr-3" style="background-image: linear-gradient(to right, #F24B4Bee, #F2762Eee, #F24B4Bee);">
       <div class='row align-items-xl-center align-items-lg-center align-items-md-center'>
-        <div class="profile-image col-12 col-xl-auto col-lg-auto col-md-1 text-center text-xl-left text-lg-left text-md-left">
+        <div class="profile-image col-12 col-xl-auto col-lg-auto col-md-12 text-center text-xl-left text-lg-left text-md-center">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, height: 120, width: 120, crop: :thumb, class:"rounded-circle" %>
           <% else %>
@@ -19,7 +19,7 @@
           <% end %>
         </div>
         <!--Profile-->
-        <div class="profile-column col-12 col-xl-left col-lg-5 col-md-3 text-center text-xl-left text-lg-left">
+        <div class="profile-column col-12 col-xl-left col-lg-5 col-md-12 text-center text-xl-left text-lg-left text-md-center">
           <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
           <div>
             <%= link_to "Gerenciar Conta", edit_user_registration_path(current_user)%>
@@ -27,11 +27,11 @@
           </div>
         </div>
         <!--Valor do Saldo-->
-        <div class="profile-column col-12 col-xl-auto col-lg-auto col-md-auto ml-lg-5 text-center text-xl-right text-lg-right text-md-right">
+        <div class="profile-column col-12 col-xl-auto col-lg-auto col-md-12 ml-xl-5 ml-lg-5 text-center text-xl-right text-lg-right text-md-center">
           <h2> Saldo <i class="fab fa-envira"></i> <%= current_user.leafs_balance %></h2>
           <p class='mb-0 pt-xl-2 pt-lg-2 pt-md-2'> Pendente de Aprovação <i class="fab fa-envira"></i> <%= @leaf_pendent_total %></p>
         </div>
-        <div class='col-12 col-xl-auto col-lg-auto col-md-auto mt-lg-0 mt-md-o mt-3 text-center'>
+        <div class='col-12 col-xl-auto col-lg-auto col-md-12 mt-lg-0 mt-md-o mt-3 text-center'>
           <%= link_to "Solicitação LEAFS", new_leaf_path, class: "button-green sol-leafs" %>
         </div>
       </div>
