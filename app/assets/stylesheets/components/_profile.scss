@@ -4,7 +4,7 @@
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
 }
-
+ 
 .profile-column a{
   font-size: 12px;
   text-decoration: none;
@@ -13,37 +13,33 @@
   transition: 0.1s;
   
 }
-
+ 
 .profile-column a:hover{
   color: rgba(255, 255, 255, 0.9);
-
+ 
 }
-
+ 
 .profile-column p{
   font-size: 15px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
   font-family: 'Noto Sans JP', sans-serif;
 }
-
-.user-p {
-  
-  margin-bottom: 0px;
-  padding-top: 10px;
-  padding-right: 10px
-}
-
-.user-q {
-  
-  margin-bottom: 0px;
-  padding-top: 10px;
-  padding-left: 10px
-}
-
+ 
+// .user-p {
+//   margin-bottom: 0px;
+//   padding-top: 0px;
+// }
+ 
+// .user-q {
+//   margin-bottom: 0px;
+//   padding-top: 10px;
+// }
+ 
 .profile-column i{
   color: #7CBF17;
 }
-
+ 
 .extrato-profile h4{
   font-size: 20px;
   color: rgb(59, 59, 59);
@@ -51,43 +47,47 @@
   font-family: 'Roboto Slab', serif;
   padding-bottom: 10px;
 }
-
+ 
 .profile-body-table{
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 14px;
 }
-
+ 
 .profile-head-table{
   font-family: 'Roboto Slab', serif;
   font-size: 18px;
 }
-
+ 
 .success {
   color: #2C8109;
 }
-
+ 
 .danger {
   color: #f44b4e;
 }
-
+ 
 .accordion .btn{
   text-decoration: none;
   color: #505050;
 }
-
+ 
 .accordion .btn:hover{
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-
+ 
 .leaf-p{
   font-size: 14px;
   font-family: 'Noto Sans JP', sans-serif;
   text-decoration: none;
 }
-
+ 
 .leaf-p:hover{
   text-decoration: none;
   color: red;
 }
+ 
+ 
+@media (min-width: 100px) and (max-width: 575px) {
 
+}

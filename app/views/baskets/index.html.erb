@@ -10,36 +10,38 @@
         <% @coupons.each do |coupon| %>
         <tbody>
           <tr>
-            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1" %></td>
-            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5 mr-1"><%= coupon.discount %></span></td>
-            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
-            <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent ml-2 h6', target: "_blank" %></td>
+            <td><%=image_tag "#{ @companies.find(coupon.company_id).logo}", size: "140x83", class: "img-table mr-1 ml-2" %></td>
+            <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="mb-5 mr-1"><strong><%= @companies.find(coupon.company_id).name %></strong> - <%= coupon.discount %></span></td>
+            <td class="td-cupom" style="font-size: 16px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><span class="cupom"><strong><i class="fas fa-ticket-alt"></i><%= coupon.code %></strong></span></td>
+            <td><%= link_to "Site", @companies.find(coupon.company_id).url, class: 'button-transparent h6 mr-1 btn-site', target: "_blank" %></td>
           </tr>
         </tbody>
         <%end%>
       </table>
     </div>
     <div class="container">
-      <div class="table-leafs mt-4 p-4">
+      <div class="mt-4">
         <h3 class="mb-4" style="font-size: 28px; font-family: 'Roboto Slab', serif; text-decoration: none">Cupons Resgatados</h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Leafs debitados</th>
-              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Código</th>
-              <th scope="col" style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Data</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @baskets.each do |basket| %>
+        <div class="mb-3 d-flex justify-content-center">
+          <table class="table table-striped">
+            <thead>
               <tr>
-                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fab fa-envira green mr-1"></i><%= basket.debit %></td>
-                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.coupon.code %></td>
-                <td style="font-size: 18px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.created_at.strftime('%d/%m/%Y')%></td>
+                <th scope="col" style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Leafs debitados</th>
+                <th scope="col" style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Código</th>
+                <th scope="col" style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none">Data</th>
               </tr>
-            <%end%>
-          </tbody>
-        </table>   
+            </thead>
+            <tbody>
+              <% @baskets.each do |basket| %>
+                <tr>
+                  <td style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><i class="fab fa-envira green mr-1"></i><%= basket.debit %></td>
+                  <td style="font-size: 13px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.coupon.code %></td>
+                  <td style="font-size: 15px; font-family: 'Noto Sans JP', sans-serif; text-decoration: none"><%= basket.created_at.strftime('%d/%m/%Y')%></td>
+                </tr>
+              <%end%>
+            </tbody>
+          </table>   
+        </div>
         <%= link_to "Adquirir novo Cupom", coupons_path, class: "button-green my-3" %>
       </div>
     </div>
